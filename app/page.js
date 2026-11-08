@@ -25,7 +25,10 @@ export default function Home() {
           </div>
           <div className="hero-art">
             <div className="glow" />
-            <Image src="/emblem.png" alt={`${site.name} logo`} width={420} height={342} priority />
+            <div className="logo-orbit" aria-hidden="true" />
+            <div className="logo-glass">
+              <Image src="/logo.png" alt={`${site.name} logo`} width={474} height={638} priority />
+            </div>
             <p className="tagline">{site.tagline}</p>
           </div>
         </div>

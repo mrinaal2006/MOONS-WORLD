@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { site } from "@/data/site";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], display: "swap" });
@@ -13,7 +14,7 @@ export const metadata = {
   title: { default: `${site.name} | ${site.tagline}`, template: `%s | ${site.name}` },
   description: site.description,
   icons: { icon: "/icon.png", apple: "/icon.png" },
-  openGraph: { title: site.name, description: site.description, images: ["/logo-full.jpg"] },
+  openGraph: { title: site.name, description: site.description, images: ["/logo.png"] },
 };
 
 export const viewport = { themeColor: "#13308f" };
@@ -22,9 +23,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
+        <div className="bg-blobs" aria-hidden="true"><span /><span /><span /></div>
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <ScrollReveal />
       </body>
     </html>
   );

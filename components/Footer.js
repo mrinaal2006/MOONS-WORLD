@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div>
           <Link href="/" className="brand">
-            <Image src="/emblem.png" alt="" width={46} height={38} />
+            <span className="footer-badge"><Image src="/emblem.png" alt="" width={34} height={40} /></span>
             <span>MOON&apos;S <b>WORLD</b></span>
           </Link>
           <p className="muted">{site.tagline}</p>
