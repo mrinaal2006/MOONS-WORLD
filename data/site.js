@@ -15,6 +15,9 @@ export const site = {
   address: "Bankura & Durgapur, West Bengal, India",
 };
 
+// Thin strip shown above the menu bar on every page.
+export const announcement = "Admissions open for Class XI – XII coaching";
+
 export const nav = [
   { label: "Home", href: "/" },
   { label: "Coaching", href: "/services/coaching" },

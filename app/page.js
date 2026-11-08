@@ -70,10 +70,10 @@ export default function Home() {
       <section className="section">
         <div className="container banner">
           <div>
-            <h2>Supervised by a retired Head Master of <span className="hl-dark">Ramkrishna Mission</span></h2>
+            <h2>Supervised by a retired Head Master of <span className="hl-gold">Ramkrishna Mission</span></h2>
             <p>Values, discipline and academic excellence for every residential and non-residential student.</p>
           </div>
-          <Link href="/services/coaching" className="btn btn-dark">View Coaching Plans</Link>
+          <Link href="/services/coaching" className="btn btn-gold">View Coaching Plans</Link>
         </div>
       </section>
 
