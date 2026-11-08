@@ -157,9 +157,9 @@ export default function Home() {
         <div className="container online">
           <div>
             <span className="pill">🌐 New • Learn from anywhere</span>
-            <h2>Admission to <span className="hl">online courses</span> from IIIT &amp; renowned universities</h2>
+            <h2>Admission to <span className="hl">online courses</span> from 6 government &amp; private universities</h2>
             <p className="muted">
-              UG and PG degrees (BA, B.Com, B.Sc, BBA, BCA, MBA and MCA) you can study from home. We guide you from choosing a
+              UG and PG degrees (BA, B.Com, BBA, BCA and MBA) you can study from home. We guide you from choosing a
               programme to completing your admission.
             </p>
             <div className="hero-cta" style={{ marginTop: 24 }}>
@@ -176,7 +176,7 @@ export default function Home() {
             <p className="inst-label">Online UG & PG admission at:</p>
             <div className="chips">
               {onlineInstitutes.map((i) => (
-                <span key={i.name} className={`chip ${i.naac === "A++" ? "chip-iit" : ""}`}>{i.name}{i.naac ? ` (${i.naac})` : ""}</span>
+                <span key={i.name} className={`chip ${i.type === "Government" ? "chip-iit" : ""}`}>{i.name}{i.naac ? ` (${i.naac})` : ""}</span>
               ))}
             </div>
           </div>

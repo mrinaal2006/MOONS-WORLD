@@ -7,7 +7,7 @@ export const site = {
   name: "Moon's World",
   tagline: "Dream • Learn • Achieve",
   description:
-    "Residential & non-residential coaching for Class XI–XII, online courses from IIIT & renowned universities, and academic consultancy for B.Tech, M.Tech and Ph.D.",
+    "Residential & non-residential coaching for Class XI–XII, online courses from 6 government & private universities, and academic consultancy for B.Tech, M.Tech and Ph.D.",
   phone: "+91 79085 74323",
   phone2: "+91 70018 28820",
   phone3: "+91 94345 88477",
@@ -71,7 +71,7 @@ export const nav = [
 export const stats = [
   { value: "XI–XII", label: "Class coaching" },
   { value: "2", label: "Teachers per subject" },
-  { value: "13", label: "Online partner universities" },
+  { value: "6", label: "Govt. & private universities" },
   { value: "B.Tech → Ph.D", label: "Project consultancy" },
 ];
 
@@ -137,15 +137,15 @@ export const services = [
   {
     slug: "online-courses",
     icon: "🌐",
-    tag: "IIIT & Renowned Universities",
+    tag: "6 Govt. & Private Universities",
     title: "Online Course Admission",
     short:
-      "Admission guidance for online degree, diploma and certificate programmes offered by IIIT Vadodara and renowned NAAC-accredited universities.",
+      "Admission guidance for online degree, diploma and certificate programmes from 6 government and private universities, including Andhra University, DDGU, Mizoram University, Chandigarh University, Uttaranchal University and ADAMAS University.",
     intro:
-      "Study at a top institute from home. We help you choose the right online programme from IIIT Vadodara and renowned universities across India, check eligibility, and guide you through the application and admission process.",
+      "Study at a top institute from home. We help you choose the right online UG or PG programme from our 6 partner government and private universities, check eligibility, and guide you through the application and admission process.",
     features: [
-      { title: "UG degree programmes", text: "BA, B.Com, B.Sc, BBA and BCA, including apprenticeship and work-linked options." },
-      { title: "PG programmes", text: "MBA in many specialisations (Marketing, Finance, HR, Business Analytics, Logistics and more) and MCA." },
+      { title: "UG degree programmes", text: "BA, B.Com, B.Com (Hons), BBA and BCA, including apprenticeship options." },
+      { title: "PG programmes", text: "MBA in many specialisations: Marketing, Finance, HR, Business Analytics, Big Data, Logistics and more." },
       { title: "Apprenticeship & work-linked degrees", text: "Earn your degree while gaining real work experience through apprenticeship-embedded programmes." },
       { title: "End-to-end admission help", text: "Programme selection, eligibility check, application, qualifier exam preparation and enrolment support." },
     ],

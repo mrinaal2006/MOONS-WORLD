@@ -20,9 +20,10 @@ export default function ProgramExplorer() {
       ...u,
       shown: u.courses.filter((c) => (level === "All" || c.level === level) && (cat === "All" || c.cat === cat)),
     }))
-    .filter((u) => u.shown.length);
+    .filter((u) => u.shown.length || (u.onRequest && cat === "All"));
 
   const total = list.reduce((n, u) => n + u.shown.length, 0);
+  const uniCount = list.length;
 
   return (
     <div className="explorer">
@@ -40,7 +41,7 @@ export default function ProgramExplorer() {
             <button key={c} className={`chip chip-btn ${cat === c ? "on" : ""}`} onClick={() => setCat(c)}>{c}</button>
           ))}
         </div>
-        <p className="muted small">{total} programmes across {list.length} universities</p>
+        <p className="muted small">{total} programmes with fees across {uniCount} universities</p>
       </div>
 
       <div className="uni-grid">
@@ -51,6 +52,7 @@ export default function ProgramExplorer() {
               <div>
                 <h4>{u.name}</h4>
                 <div className="uni-meta">
+                  {u.type && <span className={`utype ${u.type === "Government" ? "gov" : "pvt"}`}>{u.type === "Government" ? "Govt. University" : "Private University"}</span>}
                   {u.naac && <span className="naac">NAAC {u.naac}</span>}
                   {u.est && <span>Est. {u.est}</span>}
                   {u.note && <span>{u.note}</span>}
@@ -58,6 +60,12 @@ export default function ProgramExplorer() {
                 </div>
               </div>
             </header>
+            {u.onRequest && !u.shown.length ? (
+              <div className="on-request">
+                <strong>Courses &amp; fees on request</strong>
+                <span>UG and PG programmes available. Contact us for the latest course list and fee structure.</span>
+              </div>
+            ) : (
             <ul className="course-list">
               {u.shown.map((c) => (
                 <li key={c.level + c.name}>
@@ -70,6 +78,7 @@ export default function ProgramExplorer() {
                 </li>
               ))}
             </ul>
+            )}
             <a href="#enquire" className="explore">Enquire for admission <span className="arrow">→</span></a>
           </article>
         ))}
