@@ -161,18 +161,21 @@ export const contestCategories = [
     key: "scholarship",
     icon: "🏆",
     title: "Scholarship Tests",
+    chips: ["Class VI – VIII", "Class IX – X", "Class XI – XII"],
     text: "School-level scholarship exams. Top performers win fee waivers and rewards.",
   },
   {
     key: "hackathon",
     icon: "💡",
     title: "Hackathons",
+    chips: ["School", "College"],
     text: "Team up, build real solutions to real problems, and showcase your ideas.",
   },
   {
     key: "coding",
     icon: "💻",
     title: "Coding Competitions",
+    chips: ["Beginner", "Advanced"],
     text: "Test your problem-solving and programming skills against the best.",
   },
 ];

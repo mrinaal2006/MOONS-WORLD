@@ -1,5 +1,5 @@
 import { contestCategories, contests } from "@/data/site";
-import { ComingSoon, ContestCard } from "@/components/Contests";
+import { ComingSoon, ContestCard, CategoryCard } from "@/components/Contests";
 
 export const metadata = {
   title: "Contests",
@@ -18,10 +18,8 @@ export default function ContestsPage() {
             Take part in school-level scholarship tests, hackathons and coding competitions organised by Moon&apos;s World.
             Register through the link on each contest.
           </p>
-          <div className="hero-cta">
-            {contestCategories.map((c) => (
-              <a key={c.key} href={`#${c.key}`} className="btn btn-ghost">{c.icon} {c.title}</a>
-            ))}
+          <div className="grid-3" style={{ marginTop: 32 }}>
+            {contestCategories.map((c) => <CategoryCard key={c.key} c={c} />)}
           </div>
         </div>
       </section>

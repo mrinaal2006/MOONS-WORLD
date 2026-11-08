@@ -17,6 +17,22 @@ export function ComingSoon({ text = contestsNote, compact = false }) {
   );
 }
 
+// Category card in the reference style: title, chips, "Explore Category →", tinted arc with icon
+export function CategoryCard({ c }) {
+  return (
+    <Link href={`/contests#${c.key}`} className={`cat-card ${c.key}`}>
+      <div className="cat-content">
+        <h3>{c.title}</h3>
+        {c.chips?.length > 0 && (
+          <div className="chips">{c.chips.map((ch) => <span key={ch} className="chip">{ch}</span>)}</div>
+        )}
+        <span className="explore">Explore Category <span className="arrow">→</span></span>
+      </div>
+      <div className="cat-arc"><span>{c.icon}</span></div>
+    </Link>
+  );
+}
+
 export function ContestCard({ c }) {
   const cat = catOf(c.category);
   const open = c.status === "open" && c.formLink;
@@ -66,14 +82,7 @@ export default function ContestsSection() {
           <p className="muted">Scholarship tests for school students, hackathons and coding competitions.</p>
         </div>
         <div className="grid-3">
-          {contestCategories.map((c) => (
-            <Link key={c.key} href={`/contests#${c.key}`} className={`card contest-cat ${c.key}`}>
-              <div className="icon">{c.icon}</div>
-              <h3>{c.title}</h3>
-              <p className="muted">{c.text}</p>
-              <span className="more">View contests →</span>
-            </Link>
-          ))}
+          {contestCategories.map((c) => <CategoryCard key={c.key} c={c} />)}
         </div>
         <div className="contest-list">
           {list.length ? (
