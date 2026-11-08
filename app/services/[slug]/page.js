@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, universities, site } from "@/data/site";
+import { services, site } from "@/data/site";
 import ProgramExplorer from "@/components/ProgramExplorer";
 import EnquiryForm from "@/components/EnquiryForm";
 
@@ -55,22 +55,6 @@ export default async function ServicePage({ params }) {
                   <h3>{p.name}</h3>
                   <ul>{p.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
                   <Link href="#enquire" className={`btn ${p.highlight ? "btn-primary" : "btn-ghost"}`}>Enquire</Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {s.showUniversities && (
-        <section className="section alt">
-          <div className="container">
-            <div className="section-head"><span className="eyebrow">Partner institutions</span><h2>Universities in <span className="hl">Bankura &amp; Durgapur</span></h2></div>
-            <div className="grid-3">
-              {universities.map((u, i) => (
-                <div key={u.name} className="card uni">
-                  <span className="num">{i + 1}</span>
-                  <div><h3>{u.name}</h3><p className="muted">{u.city} • {u.courses}</p></div>
                 </div>
               ))}
             </div>

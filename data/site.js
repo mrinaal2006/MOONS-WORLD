@@ -7,7 +7,7 @@ export const site = {
   name: "Moon's World",
   tagline: "Dream • Learn • Achieve",
   description:
-    "Residential & non-residential coaching for Class XI–XII, university admission in Bankura & Durgapur, online courses from IIIT & renowned universities, and academic consultancy for B.Tech, M.Tech and Ph.D.",
+    "Residential & non-residential coaching for Class XI–XII, online courses from IIIT & renowned universities, and academic consultancy for B.Tech, M.Tech and Ph.D.",
   phone: "+91 79085 74323",
   phone2: "+91 70018 28820",
   phone3: "+91 94345 88477",
@@ -61,7 +61,7 @@ export const nav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
   { label: "Coaching", href: "/services/coaching" },
-  { label: "Admission", href: "/services/admission" },
+  { label: "Admission", href: "/#admission" },
   { label: "Consultancy", href: "/services/consultancy" },
   { label: "Online Courses", href: "/services/online-courses" },
   { label: "Contests", href: "/contests" },
@@ -71,20 +71,10 @@ export const nav = [
 export const stats = [
   { value: "XI–XII", label: "Class coaching" },
   { value: "2", label: "Teachers per subject" },
-  { value: "6+", label: "Partner universities" },
+  { value: "13", label: "Online partner universities" },
   { value: "B.Tech → Ph.D", label: "Project consultancy" },
 ];
 
-// Universities / institutes for admission (handwritten plan lists 1–6).
-// TODO: replace with real names and courses.
-export const universities = [
-  { name: "University 1", city: "Bankura", courses: "Courses to be announced" },
-  { name: "University 2", city: "Bankura", courses: "Courses to be announced" },
-  { name: "University 3", city: "Bankura", courses: "Courses to be announced" },
-  { name: "University 4", city: "Durgapur", courses: "Courses to be announced" },
-  { name: "University 5", city: "Durgapur", courses: "Courses to be announced" },
-  { name: "University 6", city: "Durgapur", courses: "Courses to be announced" },
-];
 
 export const services = [
   {
@@ -125,23 +115,6 @@ export const services = [
         points: ["Coaching for XI–XII", "Two teachers per subject", "2 meals a day", "Supervised study hours"],
       },
     ],
-  },
-  {
-    slug: "admission",
-    icon: "🎓",
-    tag: "Bankura & Durgapur",
-    title: "University Admission",
-    short:
-      "Admission guidance and support for universities and courses across Bankura and Durgapur.",
-    intro:
-      "We help students pick the right university and course, then handle the admission process from counselling to confirmation.",
-    features: [
-      { title: "Career counselling", text: "Find the course that fits your interests, marks and goals." },
-      { title: "University selection", text: "Compare partner universities in Bankura and Durgapur." },
-      { title: "Application support", text: "Forms, documents and deadlines, managed for you." },
-      { title: "Confirmation", text: "Support until your seat is confirmed." },
-    ],
-    showUniversities: true,
   },
   {
     slug: "consultancy",

@@ -12,7 +12,7 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div>
-            <span className="pill">🌙 Bankura • Durgapur</span>
+            <span className="pill">🌙 Bankura, West Bengal</span>
             <h1>
               Your journey from <span className="hl">Class XI</span> to{" "}
               <span className="hl">Ph.D</span> starts here
@@ -100,7 +100,7 @@ export default function Home() {
             <span className="eyebrow">What we offer</span>
             <h2>Everything a student needs, <span className="hl">under one roof</span></h2>
           </div>
-          <div className="grid-4 services-grid">
+          <div className="grid-3 services-grid">
             {services.map((s) => <ServiceCard key={s.slug} s={s} />)}
           </div>
         </div>
