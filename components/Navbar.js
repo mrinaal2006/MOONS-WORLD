@@ -29,7 +29,12 @@ export default function Navbar() {
 
   // Other pages: highlight by route
   useEffect(() => {
-    if (pathname !== "/") setActive(nav.find((n) => n.href === pathname)?.href || "");
+    if (pathname === "/") return;
+    // exact match, else the longest menu link that the path starts with (e.g. /contests/hackathons → Contests)
+    const match = nav
+      .filter((n) => !n.href.includes("#") && n.href !== "/" && (pathname === n.href || pathname.startsWith(n.href + "/")))
+      .sort((a, b) => b.href.length - a.href.length)[0];
+    setActive(match?.href || "");
   }, [pathname]);
 
   // Home page: scroll-spy

@@ -1,5 +1,7 @@
 import { contestCategories, contests } from "@/data/site";
-import { ComingSoon, ContestCard, CategoryCard, OrganizersSection } from "@/components/Contests";
+import { ContestCard, CategoryCard, OrganizersSection } from "@/components/Contests";
+import EmptyState from "@/components/contests/EmptyState";
+import Breadcrumbs from "@/components/contests/Breadcrumbs";
 
 export const metadata = {
   title: "Contests",
@@ -7,50 +9,41 @@ export const metadata = {
 };
 
 export default function ContestsPage() {
-  const anyActive = contests.some((c) => c.status !== "closed");
+  const active = contests.filter((c) => c.status !== "closed" && c.status !== "past");
   return (
     <>
       <section className="page-hero">
         <div className="container">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contests" }]} />
           <span className="pill">🏆 Scholarship • Hackathon • Coding</span>
           <h1>Contests &amp; <span className="hl">Scholarship Tests</span></h1>
           <p className="lead">
             Take part in school-level scholarship tests, hackathons and coding competitions organised by Moon&apos;s World.
-            Register through the link on each contest.
+            Choose a category to see every contest in it.
           </p>
-          <div className="grid-3" style={{ marginTop: 32 }}>
+          <div id="categories" className="grid-3" style={{ marginTop: 32 }}>
             {contestCategories.map((c) => <CategoryCard key={c.key} c={c} />)}
           </div>
         </div>
       </section>
 
-      {!anyActive && (
-        <section className="section" style={{ paddingBottom: 0 }}>
-          <div className="container"><ComingSoon /></div>
-        </section>
-      )}
-
-      {contestCategories.map((cat, i) => {
-        const list = contests.filter((c) => c.category === cat.key);
-        return (
-          <section key={cat.key} id={cat.key} className={`section ${i % 2 ? "alt" : ""}`}>
-            <div className="container">
-              <div className="cat-head">
-                <div className="icon">{cat.icon}</div>
-                <div>
-                  <h2>{cat.title}</h2>
-                  <p className="muted">{cat.text}</p>
-                </div>
-              </div>
-              {list.length ? (
-                <div className="grid-3">{list.map((c) => <ContestCard key={c.title} c={c} />)}</div>
-              ) : (
-                <ComingSoon compact text={`No ${cat.title.toLowerCase()} announced yet. New contests will be posted here soon.`} />
-              )}
-            </div>
-          </section>
-        );
-      })}
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Latest</span>
+            <h2>Open &amp; upcoming <span className="hl">contests</span></h2>
+          </div>
+          {active.length ? (
+            <div className="grid-3">{active.map((c) => <ContestCard key={c.id || c.title} c={c} />)}</div>
+          ) : (
+            <EmptyState
+              title="No upcoming contests available. Stay tuned!"
+              text="Scholarship tests, hackathons and coding competitions will be announced here with official registration links."
+              icon="🚀"
+            />
+          )}
+        </div>
+      </section>
 
       <OrganizersSection />
     </>

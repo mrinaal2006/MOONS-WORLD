@@ -167,53 +167,8 @@ export { onlineInstitutes } from "./onlinePrograms";
 //  CONTESTS: scholarship tests, hackathons, coding competitions
 // ─────────────────────────────────────────────────────────────
 
-export const contestCategories = [
-  {
-    key: "scholarship",
-    icon: "🏆",
-    title: "Scholarship Tests",
-    chips: ["Class VI – VIII", "Class IX – X", "Class XI – XII"],
-    text: "School-level scholarship exams. Top performers win fee waivers and rewards.",
-  },
-  {
-    key: "hackathon",
-    icon: "💡",
-    title: "Hackathons",
-    chips: ["School", "College"],
-    text: "Team up, build real solutions to real problems, and showcase your ideas.",
-  },
-  {
-    key: "coding",
-    icon: "💻",
-    title: "Coding Competitions",
-    chips: ["Beginner", "Advanced"],
-    text: "Test your problem-solving and programming skills against the best.",
-  },
-];
-
-// Shown when there are no open/upcoming contests (or none in a category).
-export const contestsNote =
-  "Stay tuned! Scholarship tests, hackathons and coding competitions will be announced here with registration links.";
-
-// Add a contest by copying the example below into the list.
-//  • category : "scholarship" | "hackathon" | "coding"
-//  • status   : "open" (shows Register button) | "upcoming" | "closed"
-//  • formLink : your Google Form link (used by the Register button)
-//  • banner   : an image put in /public/contests/ (e.g. "/contests/my-banner.jpg")
-//               or a full image URL. Leave "" for an automatic banner.
-//               Best size: 1200 × 630 px.
-//
-//  {
-//    title: "Moon's World Scholarship Test 2027",
-//    category: "scholarship",
-//    status: "open",
-//    date: "25 January 2027",
-//    eligibility: "Class VIII – X",
-//    description: "Win up to 100% scholarship on Class XI–XII coaching.",
-//    formLink: "https://forms.gle/your-form-id",
-//    banner: "/contests/scholarship-2027.jpg",
-//  },
-export const contests = [];
+// Contest categories, contest entries and the "coming soon" note live in data/contests.js
+export { contestCategories, contests, contestsNote } from "./contests";
 
 // ─────────────────────────────────────────────────────────────
 //  ABOUT: shown on the home page (#about)

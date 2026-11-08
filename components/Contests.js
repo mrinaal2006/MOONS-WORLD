@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Photo from "@/components/Photo";
 import { contestCategories, contests, contestsNote, contestOrganizers } from "@/data/site";
+import { statusLabel } from "@/data/contests";
 
 const catOf = (key) => contestCategories.find((c) => c.key === key) || contestCategories[0];
-const statusLabel = { open: "Registration Open", upcoming: "Coming Soon", closed: "Closed" };
 
 const initials = (n) => n.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
 
@@ -76,7 +76,7 @@ export function ComingSoon({ text = contestsNote, compact = false }) {
 // Category card in the reference style: title, chips, "Explore Category →", tinted arc with icon
 export function CategoryCard({ c }) {
   return (
-    <Link href={`/contests#${c.key}`} className={`cat-card ${c.key}`}>
+    <Link href={`/contests/${c.slug}`} className={`cat-card ${c.key}`}>
       <div className="cat-content">
         <h3>{c.title}</h3>
         {c.chips?.length > 0 && (
@@ -91,7 +91,7 @@ export function CategoryCard({ c }) {
 
 export function ContestCard({ c }) {
   const cat = catOf(c.category);
-  const open = c.status === "open" && c.formLink;
+  const open = (c.status === "open" || c.status === "ongoing") && c.formLink;
   return (
     <article className="card contest">
       <div className="contest-banner">
@@ -111,20 +111,22 @@ export function ContestCard({ c }) {
         <h3>{c.title}</h3>
         {c.description && <p className="muted">{c.description}</p>}
         <ul className="contest-meta">
-          {c.date && <li>📅 {c.date}</li>}
+          {(c.date || c.startDate || c.dates?.[0]?.date) && <li>📅 {c.date || c.startDate || `${c.dates[0].label}: ${c.dates[0].date}`}</li>}
+          {c.group && <li>🏷️ {c.group}</li>}
           {c.eligibility && <li>🎯 {c.eligibility}</li>}
         </ul>
         {open ? (
           <a href={c.formLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Register Now ↗</a>
         ) : (
-          <span className="btn btn-disabled">{c.status === "closed" ? "Registration Closed" : "Registration Opens Soon"}</span>
+          <span className="btn btn-disabled">{c.status === "closed" || c.status === "past" ? "Registration Closed" : "Registration Opens Soon"}</span>
         )}
+        <Link href={`/contests/${cat.slug}`} className="explore">View details <span className="arrow">→</span></Link>
       </div>
     </article>
   );
 }
 
-const active = () => contests.filter((c) => c.status !== "closed");
+const active = () => contests.filter((c) => c.status !== "closed" && c.status !== "past");
 
 // Compact block for the home page
 export default function ContestsSection() {
