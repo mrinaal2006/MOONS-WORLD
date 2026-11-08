@@ -648,3 +648,7 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 @media (max-width: 380px) { .nav .brand-logo { width: 40px; height: auto; } }
 .nav .brand { margin-right: 20px; }
 @media (max-width: 1260px) { .nav .brand { margin-right: 12px; } }
+
+/* Larger footer logo + name */
+.footer-badge { width: 62px; height: 62px; border-radius: 16px; }
+.footer .brand { font-size: 1.4rem; gap: 14px; }
