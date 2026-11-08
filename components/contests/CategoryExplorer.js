@@ -4,7 +4,7 @@ import ContestDetailCard from "./ContestDetailCard";
 import EmptyState from "./EmptyState";
 import { statusLabel } from "@/data/contests";
 
-const SEARCH_KEYS = ["title", "organizer", "eligibility", "problem", "examPattern", "rewards", "prizes", "difficulty", "syllabus", "topics"];
+const SEARCH_KEYS = ["title", "organizer", "eligibility", "problem", "examPattern", "rewards", "prizes", "difficulty", "syllabus", "topics", "subtitle", "description", "sponsoredBy"];
 const STATUS_FILTERS = ["all", "open", "upcoming", "closed"];
 
 function matches(c, q) {

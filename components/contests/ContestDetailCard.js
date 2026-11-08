@@ -5,6 +5,19 @@ function FieldValue({ f, value }) {
     const items = Array.isArray(value) ? value : [value];
     return <ul className="cd-list">{items.map((v) => <li key={v}>{v}</li>)}</ul>;
   }
+  if (f.type === "prizes") {
+    return (
+      <div className="cd-prizes">
+        {value.map((p, i) => (
+          <div key={p.place} className={`cd-prize p${i + 1}`}>
+            <strong>{["🥇", "🥈", "🥉"][i] || "🏅"} {p.place}</strong>
+            <ul>{p.items.map((it) => <li key={it}>{it}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  if (f.type === "note") return <p className="cd-note">{value}</p>;
   if (f.type === "dates") {
     return (
       <ul className="cd-dates">
@@ -25,7 +38,7 @@ export default function ContestDetailCard({ contest: c, category, groupLabel }) 
   const canRegister = Boolean(c.formLink) && (c.status === "open" || c.status === "ongoing");
 
   return (
-    <article className="contest-detail">
+    <article className={`contest-detail ${c.featured ? "featured" : ""}`}>
       {c.banner && (
         // eslint-disable-next-line @next/next/no-img-element
         <img className="cd-banner" src={c.banner} alt={`${c.title} banner`} loading="lazy" />
@@ -36,12 +49,14 @@ export default function ContestDetailCard({ contest: c, category, groupLabel }) 
           {groupLabel && <span className="cd-group">{groupLabel}</span>}
         </div>
         <h3>{c.title}</h3>
+        {c.subtitle && <p className="cd-sub">{c.subtitle}</p>}
+        {c.description && <p className="cd-desc">{c.description}</p>}
       </header>
 
       <dl className="cd-fields">
         {fields.map((f) => (
           <div key={f.key} className={`cd-field ${f.type}`}>
-            <dt><span aria-hidden="true">{f.icon}</span> {f.label}</dt>
+            {f.label && <dt><span aria-hidden="true">{f.icon}</span> {f.label}</dt>}
             <dd><FieldValue f={f} value={c[f.key]} /></dd>
           </div>
         ))}
@@ -49,7 +64,7 @@ export default function ContestDetailCard({ contest: c, category, groupLabel }) 
 
       <footer className="cd-foot">
         {canRegister ? (
-          <a href={c.formLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Register now ↗</a>
+          <a href={c.formLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Register now (Google Form) ↗</a>
         ) : (
           <span className="btn btn-disabled">
             {c.status === "closed" || c.status === "past" ? "Registration closed" : "Registration opens soon"}

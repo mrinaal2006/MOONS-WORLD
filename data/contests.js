@@ -31,6 +31,14 @@ export const contestCategories = [
       { key: "syllabus", label: "Syllabus", icon: "📚", type: "list" },
       { key: "dates", label: "Important dates", icon: "📅", type: "dates" },
       { key: "rewards", label: "Rewards", icon: "🎁", type: "text" },
+      { key: "prizes", label: "Prizes", icon: "🏅", type: "prizes" },
+      { key: "prizeNote", label: "", icon: "", type: "note" },
+      { key: "conductedBy", label: "Conducted by", icon: "🏫", type: "text" },
+      { key: "sponsoredBy", label: "Sponsored by", icon: "🤝", type: "text" },
+      { key: "keyInfo", label: "Key information", icon: "📌", type: "list" },
+      { key: "contact", label: "Enquiries / registration", icon: "📞", type: "text" },
+      { key: "address", label: "Centre address", icon: "📍", type: "text" },
+      { key: "disclaimer", label: "Important disclosure", icon: "⚠️", type: "note" },
     ],
     steps: ["Choose the test for your class", "Register using the official link", "Appear for the test and check results"],
   },
@@ -121,4 +129,42 @@ export const contestsNote =
 //     title: "…", status: "open", eligibility: "…", examPattern: "…",
 //     syllabus: ["…", "…"], dates: [{ label: "Last date to register", date: "…" }],
 //     rewards: "…", formLink: "https://forms.gle/…" }
-export const contests = [];
+export const contests = [
+  {
+    id: "kcg-scholarship-2026",
+    category: "scholarship",
+    group: "Class IX – X",
+    featured: true,
+    title: "Keshab Chandra Goswami Scholarship Test 2026",
+    subtitle: "An academic opportunity for students of Classes IX and X | WBBSE",
+    description:
+      "Moon's World is organising the Keshab Chandra Goswami Scholarship Test 2026 for students of Classes IX and X under WBBSE. The initiative is intended to recognise meritorious students and provide educational support towards their future studies in Classes XI and XII.",
+    status: "open",
+    eligibility: "Students currently studying in Class IX or X under WBBSE.",
+    examPattern: "Online test · Full marks: 40",
+    dates: [
+      { label: "Registration deadline", date: "09 December 2026" },
+      { label: "Examination date", date: "10 December 2026" },
+    ],
+    prizes: [
+      { place: "First Prize", items: ["₹1,00,000 tuition support*", "₹5,000 cash award", "Memento • Certificate • Gift Set"] },
+      { place: "Second Prize", items: ["₹75,000 tuition support*", "₹3,000 cash award", "Memento • Certificate • Gift Set"] },
+      { place: "Third Prize", items: ["₹50,000 tuition support*", "₹2,000 cash award", "Memento • Certificate • Gift Set"] },
+    ],
+    prizeNote:
+      "*Tuition support is intended for regular/residential studies in Classes XI–XII at the Moon's World campus, subject to eligibility verification, admission, available funding and the final published scholarship terms. It is not a cash payment to the student.",
+    conductedBy: "Moon's World",
+    sponsoredBy: "Subhankar Sarani Keshab Chandra Goswami Mission (NGO registration details stated by the sponsor: 97557 of 2012–2013)",
+    keyInfo: [
+      "Eligible applicants: students currently studying in Classes IX or X under WBBSE.",
+      "Examination: Online | Full marks: 40 | Date: 10 December 2026.",
+      "Registration closes: 09 December 2026.",
+      "Test link and instructions will be communicated to the registered contact number/email.",
+    ],
+    contact: "7001828820 / 9434588477",
+    address: "Scan Centre, Katjuridanga, Bankura – 722102",
+    disclaimer:
+      "The scholarship test is independently organised by Moon's World. It is not represented as an examination conducted, approved or endorsed by WBBSE, the Government of West Bengal or any participating school. Registration/payment does not guarantee selection or an award. All awards are subject to verification and the final published rules.",
+    formLink: "https://docs.google.com/forms/d/e/1FAIpQLSegyMPMA0xSPP0r-NbhPkvkYc9WbLVkN6npTMXwFlyjZw4IHg/viewform",
+  },
+];
