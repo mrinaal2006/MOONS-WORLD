@@ -1,5 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { onlineInstitutes } from "@/data/onlinePrograms";
 
 const inr = (n) => "₹" + n.toLocaleString("en-IN");
@@ -55,7 +56,11 @@ export default function ProgramExplorer() {
         {list.map((u) => (
           <article key={u.name} className="uni-card">
             <header className="uni-head">
-              <span className="inst-logo">{u.short}</span>
+              {u.logo ? (
+                <span className="uni-logo"><Image src={u.logo} alt={`${u.name} logo`} width={56} height={56} sizes="56px" /></span>
+              ) : (
+                <span className="inst-logo">{u.short}</span>
+              )}
               <div>
                 <h4>{u.name}</h4>
                 <div className="uni-meta">

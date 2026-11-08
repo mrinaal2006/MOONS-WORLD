@@ -2,6 +2,7 @@
 // Courses & fees from fees_structure.xlsx. fee = programme fee in ₹ as given in the sheet.
 // naac = accreditation grade, est = year established (from the sheet headers).
 // type = "Government" | "Private". onRequest: true → card shows "Courses & fees on request".
+// logo = official logo in /public/universities/ (badge with "short" letters is used if missing).
 // To add ADAMAS courses: add items to its "courses" list and remove "onRequest".
 export const onlineInstitutes = [
   {
@@ -39,7 +40,8 @@ export const onlineInstitutes = [
         "fee": 25000
       }
     ],
-    "type": "Government"
+    "type": "Government",
+    "logo": "/universities/andhra.png"
   },
   {
     "name": "Deen Dayal Upadhyaya Gorakhpur University",
@@ -83,7 +85,8 @@ export const onlineInstitutes = [
         "fee": 52500
       }
     ],
-    "type": "Government"
+    "type": "Government",
+    "logo": "/universities/ddu.png"
   },
   {
     "name": "Uttaranchal University",
@@ -171,7 +174,8 @@ export const onlineInstitutes = [
         "fee": 54050
       }
     ],
-    "type": "Government"
+    "type": "Government",
+    "logo": "/universities/mizoram.png"
   },
   {
     "name": "Chandigarh University",
@@ -222,7 +226,8 @@ export const onlineInstitutes = [
         "fee": 158001
       }
     ],
-    "type": "Private"
+    "type": "Private",
+    "logo": "/universities/chandigarh.png"
   },
   {
     "name": "ADAMAS University",
