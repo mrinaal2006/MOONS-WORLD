@@ -61,8 +61,15 @@ export default function Home() {
               programme to completing your admission.
             </p>
             <div className="hero-cta" style={{ marginTop: 24 }}>
-              <Link href="/services/online-courses" className="btn btn-primary">Explore Online Courses</Link>
-              <Link href="/#contact" className="btn btn-ghost">Enquire Now</Link>
+              <Link href="/#contact" className="btn btn-primary">Enquire Now</Link>
+              <a
+                href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to enquire about online courses from IITs / universities.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost"
+              >
+                💬 WhatsApp Enquiry
+              </a>
             </div>
           </div>
           <ul className="online-list">
