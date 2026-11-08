@@ -7,7 +7,7 @@ export const site = {
   name: "Moon's World",
   tagline: "Dream • Learn • Achieve",
   description:
-    "Residential & non-residential coaching for Class XI–XII, university admission in Bankura & Durgapur, online courses from IITs & renowned universities, and academic consultancy for B.Tech, M.Tech and Ph.D.",
+    "Residential & non-residential coaching for Class XI–XII, university admission in Bankura & Durgapur, online courses from IIIT & renowned universities, and academic consultancy for B.Tech, M.Tech and Ph.D.",
   phone: "+91 79085 74323",
   phone2: "+91 70018 28820",
   phone3: "+91 94345 88477",
@@ -164,16 +164,16 @@ export const services = [
   {
     slug: "online-courses",
     icon: "🌐",
-    tag: "IITs & Renowned Universities",
+    tag: "IIIT & Renowned Universities",
     title: "Online Course Admission",
     short:
-      "Admission guidance for online degree, diploma and certificate programmes offered by IITs and renowned universities.",
+      "Admission guidance for online degree, diploma and certificate programmes offered by IIIT Vadodara and renowned NAAC-accredited universities.",
     intro:
-      "Study at a top institute from home. We help you choose the right online programme from IITs and renowned universities, check eligibility, and guide you through the application and admission process.",
+      "Study at a top institute from home. We help you choose the right online programme from IIIT Vadodara and renowned universities across India, check eligibility, and guide you through the application and admission process.",
     features: [
-      { title: "Online degree programmes", text: "Online BS / B.Sc and other degree programmes offered by IITs and leading universities." },
-      { title: "PG & diploma programmes", text: "Online postgraduate, M.Tech, MBA, MCA and diploma programmes for graduates and working professionals." },
-      { title: "Certificate courses", text: "Short-term certificate and skill programmes in Data Science, AI, Programming, Management and more." },
+      { title: "UG degree programmes", text: "BA, B.Com, B.Sc, BBA and BCA, including apprenticeship and work-linked options." },
+      { title: "PG programmes", text: "MBA in many specialisations (Marketing, Finance, HR, Business Analytics, Logistics and more) and MCA." },
+      { title: "Apprenticeship & work-linked degrees", text: "Earn your degree while gaining real work experience through apprenticeship-embedded programmes." },
       { title: "End-to-end admission help", text: "Programme selection, eligibility check, application, qualifier exam preparation and enrolment support." },
     ],
     showOnlinePrograms: true,
@@ -187,29 +187,8 @@ export const whyUs = [
   { icon: "🧭", title: "Guidance to Ph.D", text: "From Class XI coaching to doctoral research, under one roof." },
 ];
 
-// Institutes whose ONLINE programmes we provide admission guidance for.
-// Shown on the Online Courses page and (names only) on the home page.
-// short = 2–5 letters shown in the badge.
-// ⚠ Verify programmes & eligibility each admission cycle, and remove any
-//   you don't support. type: "IIT" | "University"
-export const onlineInstitutes = [
-  // ── IITs ──
-  { name: "IIT Madras", short: "IITM", type: "IIT", programmes: ["BS in Data Science & Applications", "BS in Electronic Systems"] },
-  { name: "IIT Guwahati", short: "IITG", type: "IIT", programmes: ["B.Sc (Hons) in Data Science & AI"] },
-  { name: "IIT Jodhpur", short: "IITJ", type: "IIT", programmes: ["BS in Applied AI & Data Science"] },
-  { name: "IIT Patna", short: "IITP", type: "IIT", programmes: ["B.Sc (Hons) Computer Science & Data Analytics"] },
-  { name: "IIT Kanpur", short: "IITK", type: "IIT", programmes: ["eMasters (online PG for working professionals)"] },
-  { name: "IIT Delhi", short: "IITD", type: "IIT", programmes: ["Certificate & executive programmes (CEP)"] },
-  // ── Renowned universities ──
-  { name: "BITS Pilani (WILP)", short: "BITS", type: "University", programmes: ["B.Tech & M.Tech for working professionals", "MBA"] },
-  { name: "IGNOU", short: "IGNOU", type: "University", programmes: ["UG & PG degrees", "Diplomas & certificates"] },
-  { name: "Amity University Online", short: "AUO", type: "University", programmes: ["BBA", "BCA", "MBA", "MCA"] },
-  { name: "Manipal University Jaipur (Online)", short: "MUJ", type: "University", programmes: ["BBA", "BCA", "MBA", "MCA"] },
-  { name: "Symbiosis (SCDL)", short: "SCDL", type: "University", programmes: ["PG Diplomas", "Certificate courses"] },
-  { name: "NMIMS (CDOE)", short: "NMIMS", type: "University", programmes: ["BBA", "MBA", "Diplomas"] },
-  { name: "LPU Online", short: "LPU", type: "University", programmes: ["BBA", "BCA", "MBA", "MCA"] },
-  { name: "Chandigarh University Online", short: "CU", type: "University", programmes: ["BBA", "BCA", "MBA", "MCA"] },
-];
+// Online programmes (universities, courses, fees) live in data/onlinePrograms.js
+export { onlineInstitutes } from "./onlinePrograms";
 
 // ─────────────────────────────────────────────────────────────
 //  CONTESTS: scholarship tests, hackathons, coding competitions

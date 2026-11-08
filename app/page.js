@@ -156,15 +156,15 @@ export default function Home() {
         <div className="container online">
           <div>
             <span className="pill">🌐 New • Learn from anywhere</span>
-            <h2>Admission to <span className="hl">online courses</span> from IITs &amp; renowned universities</h2>
+            <h2>Admission to <span className="hl">online courses</span> from IIIT &amp; renowned universities</h2>
             <p className="muted">
-              Degree, PG, diploma and certificate programmes you can study from home. We guide you from choosing a
+              UG and PG degrees (BA, B.Com, B.Sc, BBA, BCA, MBA and MCA) you can study from home. We guide you from choosing a
               programme to completing your admission.
             </p>
             <div className="hero-cta" style={{ marginTop: 24 }}>
               <Link href="/#contact" className="btn btn-primary">Enquire Now</Link>
               <a
-                href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to enquire about online courses from IITs / universities.")}`}
+                href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to enquire about online courses from universities.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-ghost"
@@ -172,10 +172,10 @@ export default function Home() {
                 💬 WhatsApp Enquiry
               </a>
             </div>
-            <p className="inst-label">Admission guidance for online programmes at:</p>
+            <p className="inst-label">Online UG & PG admission at:</p>
             <div className="chips">
               {onlineInstitutes.map((i) => (
-                <span key={i.name} className={`chip ${i.type === "IIT" ? "chip-iit" : ""}`}>{i.name}</span>
+                <span key={i.name} className={`chip ${i.naac === "A++" ? "chip-iit" : ""}`}>{i.name}{i.naac ? ` (${i.naac})` : ""}</span>
               ))}
             </div>
           </div>

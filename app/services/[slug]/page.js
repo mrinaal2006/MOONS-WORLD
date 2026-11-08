@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, universities, onlineInstitutes, site } from "@/data/site";
+import { services, universities, site } from "@/data/site";
+import ProgramExplorer from "@/components/ProgramExplorer";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export function generateStaticParams() {
@@ -80,38 +81,10 @@ export default async function ServicePage({ params }) {
       {s.showOnlinePrograms && (
         <section className="section alt">
           <div className="container">
-            <div className="section-head"><span className="eyebrow">Programmes</span><h2>Online courses from <span className="hl">IITs &amp; top universities</span></h2></div>
-            {[
-              { type: "IIT", label: "IITs", icon: "🏛️" },
-              { type: "University", label: "Renowned Universities", icon: "🎓" },
-            ].map((g) => {
-              const list = onlineInstitutes.filter((i) => i.type === g.type);
-              if (!list.length) return null;
-              return (
-                <div key={g.type} className="inst-group">
-                  <h3 className="inst-head"><span>{g.icon}</span> {g.label} <small>{list.length} institutes</small></h3>
-                  <div className="grid-3">
-                    {list.map((i) => (
-                      <div key={i.name} className={`inst-card ${g.type === "IIT" ? "iit" : ""}`}>
-                        <div className="inst-top">
-                          <span className="inst-logo">{i.short || i.name.slice(0, 3).toUpperCase()}</span>
-                          <div>
-                            <h4>{i.name}</h4>
-                            <span className="inst-type">{g.type === "IIT" ? "Indian Institute of Technology" : "University"} • Online</span>
-                          </div>
-                        </div>
-                        <div className="chips">
-                          {i.programmes.map((pr) => <span key={pr} className="chip">{pr}</span>)}
-                        </div>
-                        <a href="#enquire" className="explore">Enquire for admission <span className="arrow">→</span></a>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+            <div className="section-head"><span className="eyebrow">Programmes</span><h2>Online courses &amp; <span className="hl">fee structure</span></h2><p className="muted">Choose UG or PG, filter by course, and compare fees across universities.</p></div>
+            <ProgramExplorer />
             <p className="disclaimer">
-              Admission, eligibility, fees and qualifier exams are decided by each institute. Moon&apos;s World provides
+              Fees shown are the programme fees as per the current fee structure and may be revised by the university. Admission and eligibility are decided by each institute. Moon&apos;s World provides
               admission guidance and application support. Contact us for the latest available programmes and dates.
             </p>
             <div className="enquiry-cta">
@@ -121,7 +94,7 @@ export default async function ServicePage({ params }) {
               </div>
               <div className="enquiry-actions">
                 <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="btn btn-ghost">📞 {site.phone}</a>
-                <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to enquire about online courses from IITs / universities.")}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">💬 WhatsApp Enquiry</a>
+                <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to enquire about online courses from universities.")}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">💬 WhatsApp Enquiry</a>
               </div>
             </div>
           </div>
