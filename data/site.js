@@ -58,6 +58,7 @@ export const announcement = "Admissions open for Class XI – XII coaching";
 
 export const nav = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
   { label: "Coaching", href: "/services/coaching" },
   { label: "Admission", href: "/services/admission" },
   { label: "Consultancy", href: "/services/consultancy" },
@@ -260,3 +261,39 @@ export const contestsNote =
 //    banner: "/contests/scholarship-2027.jpg",
 //  },
 export const contests = [];
+
+// ─────────────────────────────────────────────────────────────
+//  ABOUT: shown on the home page (#about)
+// ─────────────────────────────────────────────────────────────
+export const about = {
+  paragraphs: [
+    "Moon's World is an educational initiative based in Bankura, West Bengal, offering residential and non-residential educational and coaching support. The centre focuses on academic guidance for students of Classes XI and XII, with preparation support for West Bengal Board examinations, NEET and IIT-JEE.",
+    "Our approach is centred on strengthening conceptual understanding, developing analytical and problem-solving abilities, and helping students pursue their academic goals through structured guidance and a supportive learning environment.",
+  ],
+  vision:
+    "To create an accessible and supportive learning environment where academic excellence, discipline and individual growth go hand in hand.",
+  mission:
+    "To identify students' potential, strengthen their academic foundations and provide opportunities for higher educational achievement.",
+  focus: [
+    {
+      icon: "🏫",
+      title: "School-Level Academic Guidance",
+      text: "Academic support for Classes XI and XII, with emphasis on conceptual clarity and board-examination preparation.",
+    },
+    {
+      icon: "⚙️",
+      title: "IIT-JEE Preparation",
+      text: "Guidance for engineering entrance preparation, including mathematical reasoning, Physics and Chemistry.",
+    },
+    {
+      icon: "🩺",
+      title: "NEET Preparation",
+      text: "Preparation support in Physics, Chemistry and Biology for students aspiring to pursue medical education.",
+    },
+    {
+      icon: "🏠",
+      title: "Residential & Non-Residential Learning",
+      text: "Educational support in residential and non-residential formats. Accommodation and food arrangements should be confirmed with the centre.",
+    },
+  ],
+};

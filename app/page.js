@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services, stats, whyUs, site, onlineInstitutes, team, hostels } from "@/data/site";
+import { services, stats, whyUs, site, onlineInstitutes, team, hostels, about } from "@/data/site";
 import ServiceCard from "@/components/ServiceCard";
 import EnquiryForm from "@/components/EnquiryForm";
 import ContestsSection from "@/components/Contests";
@@ -51,7 +51,49 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section alt">
+      <section id="about" className="section alt">
+        <div className="container">
+          <div className="about-grid">
+            <div>
+              <span className="eyebrow">About Moon&apos;s World</span>
+              <h2 className="about-title">Building strong foundations in <span className="hl">Bankura</span></h2>
+              {about.paragraphs.map((p) => <p key={p} className="about-text">{p}</p>)}
+            </div>
+            <div className="vm">
+              <div className="vm-card vision">
+                <span className="vm-icon">🔭</span>
+                <div>
+                  <h3>Our Vision</h3>
+                  <p>{about.vision}</p>
+                </div>
+              </div>
+              <div className="vm-card mission">
+                <span className="vm-icon">🎯</span>
+                <div>
+                  <h3>Our Mission</h3>
+                  <p>{about.mission}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="section-head focus-head">
+            <span className="eyebrow">Educational Focus</span>
+            <h2>What we <span className="hl">prepare you for</span></h2>
+          </div>
+          <div className="grid-4 focus-grid">
+            {about.focus.map((f) => (
+              <div key={f.title} className="card focus">
+                <div className="icon">{f.icon}</div>
+                <h3>{f.title}</h3>
+                <p className="muted">{f.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container online">
           <div>
             <span className="pill">🌐 New • Learn from anywhere</span>
