@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services, stats, whyUs, site } from "@/data/site";
+import { services, stats, whyUs, site, onlineInstitutes } from "@/data/site";
 import ServiceCard from "@/components/ServiceCard";
 import EnquiryForm from "@/components/EnquiryForm";
 import ContestsSection from "@/components/Contests";
@@ -70,6 +70,12 @@ export default function Home() {
               >
                 💬 WhatsApp Enquiry
               </a>
+            </div>
+            <p className="inst-label">Admission guidance for online programmes at:</p>
+            <div className="chips">
+              {onlineInstitutes.map((i) => (
+                <span key={i.name} className={`chip ${i.type === "IIT" ? "chip-iit" : ""}`}>{i.name}</span>
+              ))}
             </div>
           </div>
           <ul className="online-list">

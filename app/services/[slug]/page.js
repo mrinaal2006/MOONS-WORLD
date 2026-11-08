@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, universities, onlinePrograms, site } from "@/data/site";
+import { services, universities, onlineInstitutes, site } from "@/data/site";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export function generateStaticParams() {
@@ -81,17 +81,39 @@ export default async function ServicePage({ params }) {
         <section className="section alt">
           <div className="container">
             <div className="section-head"><span className="eyebrow">Programmes</span><h2>Online courses from <span className="hl">IITs &amp; top universities</span></h2></div>
-            {onlinePrograms.length > 0 && (
-              <div className="grid-3" style={{ marginBottom: 32 }}>
-                {onlinePrograms.map((p) => (
-                  <div key={p.name + p.institute} className="card program">
-                    <span className="tag">{p.level}</span>
-                    <h3>{p.name}</h3>
-                    <p className="muted">{p.institute}{p.duration ? ` • ${p.duration}` : ""}</p>
+            {[
+              { type: "IIT", label: "IITs", icon: "🏛️" },
+              { type: "University", label: "Renowned Universities", icon: "🎓" },
+            ].map((g) => {
+              const list = onlineInstitutes.filter((i) => i.type === g.type);
+              if (!list.length) return null;
+              return (
+                <div key={g.type} className="inst-group">
+                  <h3 className="inst-head"><span>{g.icon}</span> {g.label} <small>{list.length} institutes</small></h3>
+                  <div className="grid-3">
+                    {list.map((i) => (
+                      <div key={i.name} className={`inst-card ${g.type === "IIT" ? "iit" : ""}`}>
+                        <div className="inst-top">
+                          <span className="inst-logo">{i.short || i.name.slice(0, 3).toUpperCase()}</span>
+                          <div>
+                            <h4>{i.name}</h4>
+                            <span className="inst-type">{g.type === "IIT" ? "Indian Institute of Technology" : "University"} • Online</span>
+                          </div>
+                        </div>
+                        <div className="chips">
+                          {i.programmes.map((pr) => <span key={pr} className="chip">{pr}</span>)}
+                        </div>
+                        <a href="#enquire" className="explore">Enquire for admission <span className="arrow">→</span></a>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            )}
+                </div>
+              );
+            })}
+            <p className="disclaimer">
+              Admission, eligibility, fees and qualifier exams are decided by each institute. Moon&apos;s World provides
+              admission guidance and application support. Contact us for the latest available programmes and dates.
+            </p>
             <div className="enquiry-cta">
               <div>
                 <h3>For enquiry, contact us</h3>

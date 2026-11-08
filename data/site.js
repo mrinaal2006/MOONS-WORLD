@@ -147,10 +147,29 @@ export const whyUs = [
   { icon: "🧭", title: "Guidance to Ph.D", text: "From Class XI coaching to doctoral research, under one roof." },
 ];
 
-// Online programmes we provide admission guidance for (optional).
-// Leave empty to show only the programme types + "contact us for enquiry".
-// Example: { name: "BS in Data Science", institute: "IIT ___", level: "Degree", duration: "4 years" }
-export const onlinePrograms = [];
+// Institutes whose ONLINE programmes we provide admission guidance for.
+// Shown on the Online Courses page and (names only) on the home page.
+// short = 2–5 letters shown in the badge.
+// ⚠ Verify programmes & eligibility each admission cycle, and remove any
+//   you don't support. type: "IIT" | "University"
+export const onlineInstitutes = [
+  // ── IITs ──
+  { name: "IIT Madras", short: "IITM", type: "IIT", programmes: ["BS in Data Science & Applications", "BS in Electronic Systems"] },
+  { name: "IIT Guwahati", short: "IITG", type: "IIT", programmes: ["B.Sc (Hons) in Data Science & AI"] },
+  { name: "IIT Jodhpur", short: "IITJ", type: "IIT", programmes: ["BS in Applied AI & Data Science"] },
+  { name: "IIT Patna", short: "IITP", type: "IIT", programmes: ["B.Sc (Hons) Computer Science & Data Analytics"] },
+  { name: "IIT Kanpur", short: "IITK", type: "IIT", programmes: ["eMasters (online PG for working professionals)"] },
+  { name: "IIT Delhi", short: "IITD", type: "IIT", programmes: ["Certificate & executive programmes (CEP)"] },
+  // ── Renowned universities ──
+  { name: "BITS Pilani (WILP)", short: "BITS", type: "University", programmes: ["B.Tech & M.Tech for working professionals", "MBA"] },
+  { name: "IGNOU", short: "IGNOU", type: "University", programmes: ["UG & PG degrees", "Diplomas & certificates"] },
+  { name: "Amity University Online", short: "AUO", type: "University", programmes: ["BBA", "BCA", "MBA", "MCA"] },
+  { name: "Manipal University Jaipur (Online)", short: "MUJ", type: "University", programmes: ["BBA", "BCA", "MBA", "MCA"] },
+  { name: "Symbiosis (SCDL)", short: "SCDL", type: "University", programmes: ["PG Diplomas", "Certificate courses"] },
+  { name: "NMIMS (CDOE)", short: "NMIMS", type: "University", programmes: ["BBA", "MBA", "Diplomas"] },
+  { name: "LPU Online", short: "LPU", type: "University", programmes: ["BBA", "BCA", "MBA", "MCA"] },
+  { name: "Chandigarh University Online", short: "CU", type: "University", programmes: ["BBA", "BCA", "MBA", "MCA"] },
+];
 
 // ─────────────────────────────────────────────────────────────
 //  CONTESTS: scholarship tests, hackathons, coding competitions
