@@ -6,6 +6,7 @@ import EnquiryForm from "@/components/EnquiryForm";
 import ContestsSection from "@/components/Contests";
 
 export default function Home() {
+  const online = services.find((s) => s.slug === "online-courses");
   return (
     <>
       <section className="hero">
@@ -44,9 +45,34 @@ export default function Home() {
             <span className="eyebrow">What we offer</span>
             <h2>Everything a student needs, <span className="hl">under one roof</span></h2>
           </div>
-          <div className="grid-3">
+          <div className="grid-4 services-grid">
             {services.map((s) => <ServiceCard key={s.slug} s={s} />)}
           </div>
+        </div>
+      </section>
+
+      <section className="section alt">
+        <div className="container online">
+          <div>
+            <span className="pill">🌐 New • Learn from anywhere</span>
+            <h2>Admission to <span className="hl">online courses</span> from IITs &amp; renowned universities</h2>
+            <p className="muted">
+              Degree, PG, diploma and certificate programmes you can study from home. We guide you from choosing a
+              programme to completing your admission.
+            </p>
+            <div className="hero-cta" style={{ marginTop: 24 }}>
+              <Link href="/services/online-courses" className="btn btn-primary">Explore Online Courses</Link>
+              <Link href="/#contact" className="btn btn-ghost">Enquire Now</Link>
+            </div>
+          </div>
+          <ul className="online-list">
+            {online.features.map((f) => (
+              <li key={f.title} className="card">
+                <strong>{f.title}</strong>
+                <span className="muted">{f.text}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

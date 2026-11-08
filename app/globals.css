@@ -157,7 +157,7 @@ h3 { font-size: 1.12rem; font-weight: 600; color: var(--navy-dark); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
 }
-@media (max-width: 760px) {
+@media (max-width: 1100px) {
   .burger { display: block; }
   .nav-links { position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px rgba(15, 23, 42, .08); padding: 8px 20px 20px; display: none; }
   .nav-links.open { display: flex; }
@@ -210,4 +210,28 @@ h3 { font-size: 1.12rem; font-weight: 600; color: var(--navy-dark); }
 @media (max-width: 760px) {
   .coming-soon { flex-direction: column; align-items: flex-start; padding: 24px; }
   .cat-head { align-items: flex-start; }
+}
+
+/* Online courses */
+.online { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.online h2 { margin-bottom: 14px; }
+.online-list { display: grid; gap: 14px; }
+.online-list li { display: grid; gap: 2px; padding: 18px 22px; border-left: 4px solid var(--primary); }
+.online-list strong { color: var(--navy-dark); }
+.online-list .muted { font-size: .92rem; }
+.enquiry-cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 32px; border-radius: var(--radius); background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--gold); box-shadow: var(--shadow); }
+.enquiry-cta h3 { font-size: 1.35rem; margin-bottom: 6px; }
+.enquiry-actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+.program { display: grid; gap: 8px; }
+
+@media (max-width: 1180px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 960px) {
+  .online { grid-template-columns: 1fr; }
+  .enquiry-cta { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .enquiry-actions, .enquiry-actions .btn { width: 100%; }
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, universities } from "@/data/site";
+import { services, universities, onlinePrograms, site } from "@/data/site";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export function generateStaticParams() {
@@ -72,6 +72,35 @@ export default async function ServicePage({ params }) {
                   <div><h3>{u.name}</h3><p className="muted">{u.city} • {u.courses}</p></div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {s.showOnlinePrograms && (
+        <section className="section alt">
+          <div className="container">
+            <div className="section-head"><span className="eyebrow">Programmes</span><h2>Online courses from <span className="hl">IITs &amp; top universities</span></h2></div>
+            {onlinePrograms.length > 0 && (
+              <div className="grid-3" style={{ marginBottom: 32 }}>
+                {onlinePrograms.map((p) => (
+                  <div key={p.name + p.institute} className="card program">
+                    <span className="tag">{p.level}</span>
+                    <h3>{p.name}</h3>
+                    <p className="muted">{p.institute}{p.duration ? ` • ${p.duration}` : ""}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="enquiry-cta">
+              <div>
+                <h3>For enquiry, contact us</h3>
+                <p className="muted">Tell us your qualification and interest. We&apos;ll share the available programmes, eligibility, fees and admission dates.</p>
+              </div>
+              <div className="enquiry-actions">
+                <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="btn btn-ghost">📞 {site.phone}</a>
+                <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to enquire about online courses from IITs / universities.")}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">💬 WhatsApp Enquiry</a>
+              </div>
             </div>
           </div>
         </section>

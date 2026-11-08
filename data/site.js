@@ -7,7 +7,7 @@ export const site = {
   name: "Moon's World",
   tagline: "Dream • Learn • Achieve",
   description:
-    "Residential & non-residential coaching for Class XI–XII, university admission guidance in Bankura & Durgapur, and academic consultancy for B.Tech, M.Tech and Ph.D.",
+    "Residential & non-residential coaching for Class XI–XII, university admission in Bankura & Durgapur, online courses from IITs & renowned universities, and academic consultancy for B.Tech, M.Tech and Ph.D.",
   // TODO: replace with real contact details
   phone: "+91 00000 00000",
   whatsapp: "910000000000", // country code + number, digits only
@@ -23,6 +23,7 @@ export const nav = [
   { label: "Coaching", href: "/services/coaching" },
   { label: "Admission", href: "/services/admission" },
   { label: "Consultancy", href: "/services/consultancy" },
+  { label: "Online Courses", href: "/services/online-courses" },
   { label: "Contests", href: "/contests" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -120,6 +121,23 @@ export const services = [
       },
     ],
   },
+  {
+    slug: "online-courses",
+    icon: "🌐",
+    tag: "IITs & Renowned Universities",
+    title: "Online Course Admission",
+    short:
+      "Admission guidance for online degree, diploma and certificate programmes offered by IITs and renowned universities.",
+    intro:
+      "Study at a top institute from home. We help you choose the right online programme from IITs and renowned universities, check eligibility, and guide you through the application and admission process.",
+    features: [
+      { title: "Online degree programmes", text: "Online BS / B.Sc and other degree programmes offered by IITs and leading universities." },
+      { title: "PG & diploma programmes", text: "Online postgraduate, M.Tech, MBA, MCA and diploma programmes for graduates and working professionals." },
+      { title: "Certificate courses", text: "Short-term certificate and skill programmes in Data Science, AI, Programming, Management and more." },
+      { title: "End-to-end admission help", text: "Programme selection, eligibility check, application, qualifier exam preparation and enrolment support." },
+    ],
+    showOnlinePrograms: true,
+  },
 ];
 
 export const whyUs = [
@@ -128,6 +146,11 @@ export const whyUs = [
   { icon: "🍲", title: "Food & lodging", text: "Healthy meals and secure stay, so students can focus on studies." },
   { icon: "🧭", title: "Guidance to Ph.D", text: "From Class XI coaching to doctoral research, under one roof." },
 ];
+
+// Online programmes we provide admission guidance for (optional).
+// Leave empty to show only the programme types + "contact us for enquiry".
+// Example: { name: "BS in Data Science", institute: "IIT ___", level: "Degree", duration: "4 years" }
+export const onlinePrograms = [];
 
 // ─────────────────────────────────────────────────────────────
 //  CONTESTS: scholarship tests, hackathons, coding competitions
