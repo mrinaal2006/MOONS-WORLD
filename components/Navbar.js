@@ -2,18 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { nav, site, announcement } from "@/data/site";
+import { nav } from "@/data/site";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <>
-    <div className="topbar">
-      <div className="container">
-        <span>🎓 <b>{announcement}</b></span>
-        <span className="hide-sm">📞 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a></span>
-      </div>
-    </div>
     <header className="nav">
       <div className="container nav-inner">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
@@ -31,6 +24,5 @@ export default function Navbar() {
         </button>
       </div>
     </header>
-    </>
   );
 }
