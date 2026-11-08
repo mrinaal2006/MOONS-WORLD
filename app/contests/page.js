@@ -1,5 +1,5 @@
 import { contestCategories, contests } from "@/data/site";
-import { ComingSoon, ContestCard, CategoryCard } from "@/components/Contests";
+import { ComingSoon, ContestCard, CategoryCard, OrganizersSection } from "@/components/Contests";
 
 export const metadata = {
   title: "Contests",
@@ -51,6 +51,8 @@ export default function ContestsPage() {
           </section>
         );
       })}
+
+      <OrganizersSection />
     </>
   );
 }

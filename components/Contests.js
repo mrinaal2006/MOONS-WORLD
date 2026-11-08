@@ -1,8 +1,64 @@
 import Link from "next/link";
-import { contestCategories, contests, contestsNote } from "@/data/site";
+import Image from "next/image";
+import { contestCategories, contests, contestsNote, contestOrganizers } from "@/data/site";
 
 const catOf = (key) => contestCategories.find((c) => c.key === key) || contestCategories[0];
 const statusLabel = { open: "Registration Open", upcoming: "Coming Soon", closed: "Closed" };
+
+const initials = (n) => n.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
+
+function Avatar({ o, size }) {
+  return o.photo ? (
+    <span className="org-avatar" style={{ width: size, height: size }}>
+      <Image src={o.photo} alt={o.name} fill sizes={`${size}px`} />
+    </span>
+  ) : (
+    <span className="org-avatar" style={{ width: size, height: size }} aria-hidden="true">{initials(o.name)}</span>
+  );
+}
+
+// Full section (Contests page)
+export function OrganizersSection() {
+  if (!contestOrganizers.length) return null;
+  return (
+    <section id="organizers" className="section">
+      <div className="container">
+        <div className="section-head">
+          <span className="eyebrow">Contest Organizers</span>
+          <h2>Meet the <span className="hl">organizing team</span></h2>
+          <p className="muted">The people who plan and run our scholarship tests, hackathons and coding competitions.</p>
+        </div>
+        <div className="org-grid">
+          {contestOrganizers.map((o) => (
+            <article key={o.name} className="org-card">
+              <div className="org-ring"><Avatar o={o} size={104} /></div>
+              <h3>{o.name}</h3>
+              <span className="tag">🏆 {o.role}</span>
+              {o.bio && <p className="muted">{o.bio}</p>}
+              {o.phone && <a href={`tel:${o.phone.replace(/\s/g, "")}`} className="explore">📞 {o.phone}</a>}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Compact "Organised by" strip (home page Contests section)
+function OrganizersStrip() {
+  if (!contestOrganizers.length) return null;
+  return (
+    <Link href="/contests#organizers" className="org-strip">
+      <span className="org-label">Contests organised by</span>
+      <span className="org-people">
+        {contestOrganizers.map((o) => (
+          <span key={o.name} className="org-person"><Avatar o={o} size={40} /> {o.name}</span>
+        ))}
+      </span>
+      <span className="arrow">→</span>
+    </Link>
+  );
+}
 
 export function ComingSoon({ text = contestsNote, compact = false }) {
   return (
@@ -91,6 +147,7 @@ export default function ContestsSection() {
             <ComingSoon />
           )}
         </div>
+        <OrganizersStrip />
         {list.length > 0 && (
           <div className="center" style={{ marginTop: 32 }}>
             <Link href="/contests" className="btn btn-ghost">View all contests</Link>

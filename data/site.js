@@ -318,3 +318,10 @@ export const gallery = [
   { src: "/gallery/class-teaching.jpg", w: 610, h: 745, caption: "Classroom teaching" },
   { src: "/gallery/felicitation.jpg", w: 1400, h: 630, caption: "Student felicitation programme" },
 ];
+
+// Contest organizers, shown on /contests and in the home Contests section.
+// Optional per person: photo: "/team/name.jpg", bio: "one line", phone: "+91 …"
+export const contestOrganizers = [
+  { name: "Mrinal Pal", role: "Contest Organizer" },
+  { name: "Purba Ray", role: "Contest Organizer" },
+];
