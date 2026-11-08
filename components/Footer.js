@@ -24,8 +24,9 @@ export default function Footer() {
         <div>
           <h4>Contact</h4>
           <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
-          <a href={`mailto:${site.email}`}>{site.email}</a>
-          <span className="muted">{site.address}</span>
+          {site.phone2 && <a href={`tel:${site.phone2.replace(/\s/g, "")}`}>{site.phone2}</a>}
+          {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
+          <a href={site.mapLink} target="_blank" rel="noopener noreferrer">{site.address}</a>
         </div>
       </div>
       <div className="container copy">© {new Date().getFullYear()} {site.name}. All rights reserved.</div>

@@ -8,12 +8,50 @@ export const site = {
   tagline: "Dream • Learn • Achieve",
   description:
     "Residential & non-residential coaching for Class XI–XII, university admission in Bankura & Durgapur, online courses from IITs & renowned universities, and academic consultancy for B.Tech, M.Tech and Ph.D.",
-  // TODO: replace with real contact details
-  phone: "+91 00000 00000",
-  whatsapp: "910000000000", // country code + number, digits only
-  email: "info@moonsworld.in",
-  address: "Bankura & Durgapur, West Bengal, India",
+  phone: "+91 79085 74323",
+  phone2: "+91 70018 28820",
+  whatsapp: "917908574323", // country code + number, digits only
+  email: "", // add an email address here to show it on the site
+  address: "Scan Centre, Katjuridanga, Bankura – 722102, West Bengal",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=Scan+Centre+Katjuridanga+Bankura+722102",
 };
+
+// Leadership shown on the home page (photos are in /public/team/)
+export const team = [
+  {
+    name: "Biswajit Mondal",
+    role: "Advisor",
+    photo: "/team/advisor.jpg",
+    bio: "Guides the vision of Moon's World, with a focus on values, character and the all-round development of every student.",
+    quote: "শরীর তো চলেই যাবে একদিন; পারো তো বিবেকটাকে বাঁচিয়ে রেখো। মৃত দেহের চাইতে মৃত বিবেকই বেশি ভয়ঙ্কর।",
+  },
+  {
+    name: "Biswabaran Sir",
+    role: "Institute Superintendent",
+    credential: "Ex. Head Master, Ramkrishna Mission, Garbetha",
+    photo: "/team/superintendent.jpg",
+    bio: "Expert coaching by experienced teachers under his direct supervision, bringing the discipline and values of Ramkrishna Mission to every student.",
+    phone: "+91 79085 74323",
+  },
+];
+
+// Hostels (from the Moon's World flyer)
+export const hostels = [
+  {
+    name: "Moon's Residency",
+    tag: "Boys & Girls",
+    location: "Katjuridanga, Bankura",
+    points: ["Separate boys' and girls' hostel", "Four-time food facility", "Option to stay without food"],
+    phone: "+91 79085 74323",
+  },
+  {
+    name: "মায়া ছাত্রীনিবাস (Maya Chhatrinibas)",
+    tag: "Girls' Hostel",
+    location: "Pranabanandapalli, Bankura",
+    points: ["Stay only", "Stay + food + coaching"],
+    phone: "+91 79085 74323 / +91 70018 28820",
+  },
+];
 
 // Thin strip shown above the menu bar on every page.
 export const announcement = "Admissions open for Class XI – XII coaching";
@@ -55,7 +93,7 @@ export const services = [
     short:
       "Focused coaching for Class XI–XII with two teachers for every subject, safe lodging and daily meals.",
     intro:
-      "Choose to stay with us or attend as a day scholar. Both programmes follow the same syllabus, the same teachers and the same discipline, under the eye of an experienced retired Head Master of Ramkrishna Mission.",
+      "Choose to stay with us or attend as a day scholar. Both programmes follow the same syllabus, the same teachers and the same discipline, under the direct supervision of Biswabaran Sir, Ex. Head Master, Ramkrishna Mission, Garbetha.",
     features: [
       {
         title: "Two subject teachers",
@@ -67,11 +105,11 @@ export const services = [
       },
       {
         title: "Secure lodging",
-        text: "Safe, supervised accommodation with a calm study environment for residential students.",
+        text: "Separate boys' and girls' hostels at Moon's Residency, Katjuridanga, plus a girls' hostel at Pranabanandapalli.",
       },
       {
         title: "Expert supervision",
-        text: "Overall supervision by a retired Head Master of Ramkrishna Mission: discipline, values and results.",
+        text: "Direct supervision by Biswabaran Sir, Ex. Head Master, Ramkrishna Mission, Garbetha: discipline, values and results.",
       },
     ],
     plans: [
@@ -141,7 +179,7 @@ export const services = [
 ];
 
 export const whyUs = [
-  { icon: "🏫", title: "Mission-style discipline", text: "Supervised by a retired Head Master of Ramkrishna Mission." },
+  { icon: "🏫", title: "Mission-style discipline", text: "Under the direct supervision of Biswabaran Sir, Ex. Head Master, Ramkrishna Mission, Garbetha." },
   { icon: "👩‍🏫", title: "Two teachers per subject", text: "Double the attention, double the clarity." },
   { icon: "🍲", title: "Food & lodging", text: "Healthy meals and secure stay, so students can focus on studies." },
   { icon: "🧭", title: "Guidance to Ph.D", text: "From Class XI coaching to doctoral research, under one roof." },

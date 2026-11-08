@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services, stats, whyUs, site, onlineInstitutes } from "@/data/site";
+import { services, stats, whyUs, site, onlineInstitutes, team, hostels } from "@/data/site";
 import ServiceCard from "@/components/ServiceCard";
 import EnquiryForm from "@/components/EnquiryForm";
 import ContestsSection from "@/components/Contests";
@@ -109,11 +109,66 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="leadership" className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Our Leadership</span>
+            <h2>The people behind <span className="hl">Moon&apos;s World</span></h2>
+          </div>
+          <div className="grid-2 team">
+            {team.map((m) => (
+              <article key={m.name} className="team-card">
+                <div className="team-photo">
+                  <Image src={m.photo} alt={m.name} fill sizes="(max-width: 760px) 100vw, 260px" />
+                </div>
+                <div className="team-body">
+                  <span className="tag">{m.role}</span>
+                  <h3>{m.name}</h3>
+                  {m.credential && <p className="credential">🎓 {m.credential}</p>}
+                  <p className="muted">{m.bio}</p>
+                  {m.quote && <blockquote lang="bn">“{m.quote}”</blockquote>}
+                  {m.phone && (
+                    <a href={`tel:${m.phone.replace(/\s/g, "")}`} className="explore">
+                      📞 {m.phone} <span className="arrow">→</span>
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="hostels" className="section alt">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Stay with us</span>
+            <h2>Safe hostels for <span className="hl">boys &amp; girls</span></h2>
+          </div>
+          <div className="grid-2 hostels">
+            {hostels.map((h) => (
+              <div key={h.name} className="card hostel">
+                <div className="hostel-top">
+                  <div className="icon">🏠</div>
+                  <div>
+                    <span className="tag">{h.tag}</span>
+                    <h3>{h.name}</h3>
+                    <p className="muted small">📍 {h.location}</p>
+                  </div>
+                </div>
+                <ul>{h.points.map((p) => <li key={p}>{p}</li>)}</ul>
+                <a href={`tel:${h.phone.split("/")[0].replace(/\s/g, "")}`} className="btn btn-ghost">📞 {h.phone}</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container banner">
           <div>
-            <h2>Supervised by a retired Head Master of <span className="hl-gold">Ramkrishna Mission</span></h2>
-            <p>Values, discipline and academic excellence for every residential and non-residential student.</p>
+            <h2>Under the direct supervision of <span className="hl-gold">Biswabaran Sir</span></h2>
+            <p>Ex. Head Master, Ramkrishna Mission, Garbetha. Values, discipline and academic excellence for every residential and non-residential student.</p>
           </div>
           <Link href="/services/coaching" className="btn btn-gold">View Coaching Plans</Link>
         </div>
@@ -125,10 +180,13 @@ export default function Home() {
             <span className="eyebrow">Contact us</span>
             <h2>Talk to our <span className="hl">counsellors</span></h2>
             <p className="muted">Leave your details and we&apos;ll call you back with fees, seat availability and admission details.</p>
+            <div className="centre-photo">
+              <Image src="/team/centre.jpg" alt="Moon's World centre, Katjuridanga, Bankura" width={1400} height={865} sizes="(max-width: 960px) 100vw, 560px" />
+            </div>
             <ul className="contact-list">
-              <li>📞 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a></li>
-              <li>✉️ <a href={`mailto:${site.email}`}>{site.email}</a></li>
-              <li>📍 {site.address}</li>
+              <li>📞 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>{site.phone2 && <> / <a href={`tel:${site.phone2.replace(/\s/g, "")}`}>{site.phone2}</a></>}</li>
+              {site.email && <li>✉️ <a href={`mailto:${site.email}`}>{site.email}</a></li>}
+              <li>📍 <a href={site.mapLink} target="_blank" rel="noopener noreferrer">{site.address}</a></li>
             </ul>
           </div>
           <EnquiryForm />

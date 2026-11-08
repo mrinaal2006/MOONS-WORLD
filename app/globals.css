@@ -280,3 +280,40 @@ h3 { font-size: 1.12rem; font-weight: 600; color: var(--navy-dark); }
 .inst-label { margin: 28px 0 12px; font-weight: 600; color: var(--navy-dark); font-size: .95rem; }
 .online .chips .chip { padding: 6px 14px; font-size: .82rem; }
 .chip-iit { border-color: #f2d27a; background: var(--gold-soft); color: #6b4c00; font-weight: 600; }
+
+/* Leadership */
+.team { max-width: 1100px; margin: 0 auto; }
+.team-card { display: grid; grid-template-columns: 220px 1fr; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: .25s; }
+.team-card:hover { box-shadow: var(--shadow-lg); }
+.team-photo { position: relative; min-height: 300px; background: var(--bg-2); }
+.team-photo img { object-fit: cover; object-position: center top; }
+.team-body { padding: 26px; display: flex; flex-direction: column; gap: 10px; }
+.team-body h3 { font-size: 1.4rem; }
+.credential { font-weight: 600; color: var(--primary); font-size: .95rem; }
+.team-body blockquote { margin-top: 4px; padding: 12px 16px; border-left: 4px solid var(--gold); background: var(--gold-soft); border-radius: 0 10px 10px 0; color: #4a3600; font-size: .95rem; line-height: 1.7; }
+.team-body .explore { font-size: 1rem; margin-top: auto; }
+.team-body .arrow { width: 44px; height: 32px; }
+
+/* Hostels */
+.hostels { max-width: 1000px; margin: 0 auto; }
+.hostel { display: grid; gap: 18px; align-content: start; }
+.hostel-top { display: flex; gap: 16px; align-items: flex-start; }
+.hostel-top .icon { margin: 0; flex-shrink: 0; }
+.hostel-top h3 { margin-top: 6px; }
+.hostel ul { display: grid; gap: 8px; }
+.hostel li { padding-left: 26px; position: relative; color: #334155; }
+.hostel li::before { content: "✓"; position: absolute; left: 0; color: #16a34a; font-weight: 700; }
+.hostel .btn { justify-self: start; }
+
+.centre-photo { margin-top: 24px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.centre-photo img { display: block; width: 100%; height: auto; }
+
+@media (max-width: 960px) {
+  .team-card { grid-template-columns: 180px 1fr; }
+}
+@media (max-width: 560px) {
+  .team-card { grid-template-columns: 1fr; }
+  .team-photo { min-height: 340px; }
+  .hostel .btn { justify-self: stretch; }
+}
+@media (max-width: 1000px) { .team.grid-2 { grid-template-columns: 1fr; max-width: 680px; } }
