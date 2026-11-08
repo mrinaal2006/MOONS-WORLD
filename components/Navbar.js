@@ -66,7 +66,7 @@ export default function Navbar() {
     <header className="nav">
       <div className="container nav-inner">
         <Link href="/" className="brand" onClick={() => go("/")}>
-          <Image src="/emblem.png" alt="" width={38} height={44} preload className="brand-logo" />
+          <Image src="/emblem.png" alt="" width={48} height={56} preload className="brand-logo" />
           <span>MOON&apos;S <b>WORLD</b></span>
         </Link>
         <nav className={`nav-links ${open ? "open" : ""}`}>

@@ -644,3 +644,7 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 .nav .brand { font-size: 1.4rem; }
 @media (max-width: 1260px) and (min-width: 1181px) { .nav .brand { font-size: 1.3rem; } }
 @media (max-width: 380px) { .nav .brand { font-size: 1.2rem; } }
+@media (max-width: 1260px) and (min-width: 1181px) { .nav .brand-logo { width: 44px; height: auto; } }
+@media (max-width: 380px) { .nav .brand-logo { width: 40px; height: auto; } }
+.nav .brand { margin-right: 20px; }
+@media (max-width: 1260px) { .nav .brand { margin-right: 12px; } }
