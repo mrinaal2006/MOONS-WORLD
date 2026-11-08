@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Photo from "@/components/Photo";
 import Link from "next/link";
 import { services, stats, whyUs, site, onlineInstitutes, team, hostels, about, admissionOffer, gallery } from "@/data/site";
 import ServiceCard from "@/components/ServiceCard";
@@ -26,10 +27,10 @@ export default function Home() {
           <div className="hero-photos">
             <div className="glow" />
             <div className="photo-main glass-frame">
-              <Image src="/gallery/self-study.jpg" alt="Moon's World students studying" width={1400} height={882} priority sizes="(max-width: 960px) 100vw, 520px" />
+              <Photo src="/gallery/self-study.jpg" alt="Moon's World students studying" width={1400} height={882} preload fetchPriority="high" sizes="(max-width: 960px) 100vw, 520px" />
             </div>
             <div className="photo-float glass-frame">
-              <Image src="/gallery/class-teaching.jpg" alt="Classroom teaching at Moon's World" width={610} height={745} sizes="180px" />
+              <Photo src="/gallery/class-teaching.jpg" alt="Classroom teaching at Moon's World" width={610} height={745} sizes="220px" />
             </div>
             <Link href="/#admission" className="offer-badge">
               <span>Class XI admission</span>
@@ -51,7 +52,7 @@ export default function Home() {
       <section id="admission" className="section offer-section">
         <div className="container offer-grid">
           <a href={admissionOffer.flyer} target="_blank" rel="noopener noreferrer" className="flyer glass-frame" title="Open full flyer">
-            <Image src={admissionOffer.flyer} alt="Moon's World Class XI special admission flyer" width={900} height={1350} sizes="(max-width: 960px) 90vw, 420px" />
+            <Photo src={admissionOffer.flyer} alt="Moon's World Class XI special admission flyer" width={900} height={1350} sizes="(max-width: 960px) 90vw, 420px" />
             <span className="flyer-zoom">🔍 View full flyer</span>
           </a>
           <div>
@@ -116,7 +117,7 @@ export default function Home() {
             </div>
             <div className="vm">
               <div className="vm-photo glass-frame">
-                <Image src="/gallery/class-room.jpg" alt="Students attending class at Moon's World" width={610} height={1070} sizes="(max-width: 960px) 100vw, 480px" />
+                <Photo src="/gallery/class-room.jpg" alt="Students attending class at Moon's World" width={610} height={1070} sizes="(max-width: 960px) 100vw, 480px" />
                 <span className="vm-photo-tag">📍 Our classroom, Bankura</span>
               </div>
               <div className="vm-card vision">
@@ -220,7 +221,7 @@ export default function Home() {
             {team.map((m) => (
               <article key={m.name} className="team-card">
                 <div className="team-photo">
-                  <Image src={m.photo} alt={m.name} fill sizes="(max-width: 760px) 100vw, 260px" />
+                  <Photo src={m.photo} alt={m.name} fill sizes="(max-width: 560px) 100vw, 220px" />
                 </div>
                 <div className="team-body">
                   <span className="tag">{m.role}</span>
@@ -250,7 +251,7 @@ export default function Home() {
           <div className="gallery">
             {gallery.map((g) => (
               <figure key={g.src} className={`g-item glass-frame ${g.size || ""}`}>
-                <Image src={g.src} alt={g.caption} width={g.w} height={g.h} sizes="(max-width: 760px) 100vw, 50vw" />
+                <Photo src={g.src} alt={g.caption} width={g.w} height={g.h} sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 800px" />
                 <figcaption>{g.caption}</figcaption>
               </figure>
             ))}
@@ -300,7 +301,7 @@ export default function Home() {
             <h2>Talk to our <span className="hl">counsellors</span></h2>
             <p className="muted">Leave your details and we&apos;ll call you back with fees, seat availability and admission details.</p>
             <div className="centre-photo">
-              <Image src="/team/centre.jpg" alt="Moon's World centre, Katjuridanga, Bankura" width={1400} height={865} sizes="(max-width: 960px) 100vw, 560px" />
+              <Photo src="/team/centre.jpg" alt="Moon's World centre, Katjuridanga, Bankura" width={1200} height={742} sizes="(max-width: 960px) 100vw, 560px" />
             </div>
             <ul className="contact-list">
               <li>📞 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>{site.phone2 && <> / <a href={`tel:${site.phone2.replace(/\s/g, "")}`}>{site.phone2}</a></>}{site.phone3 && <> / <a href={`tel:${site.phone3.replace(/\s/g, "")}`}>{site.phone3}</a></>}</li>

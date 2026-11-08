@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Photo from "@/components/Photo";
 import { contestCategories, contests, contestsNote, contestOrganizers } from "@/data/site";
 
 const catOf = (key) => contestCategories.find((c) => c.key === key) || contestCategories[0];
@@ -10,7 +10,7 @@ const initials = (n) => n.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toU
 function Avatar({ o, size }) {
   return o.photo ? (
     <span className="org-avatar" style={{ width: size, height: size }}>
-      <Image src={o.photo} alt={o.name} fill sizes={`${size}px`} />
+      <Photo src={o.photo} alt={o.name} fill sizes={`${size}px`} />
     </span>
   ) : (
     <span className="org-avatar" style={{ width: size, height: size }} aria-hidden="true">{initials(o.name)}</span>
