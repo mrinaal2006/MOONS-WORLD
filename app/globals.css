@@ -174,3 +174,40 @@ h3 { font-size: 1.12rem; font-weight: 600; color: var(--navy-dark); }
   .section { padding: 56px 0; }
   .hero { padding-top: 40px; }
 }
+
+/* Contests */
+.contest-cat { display: flex; flex-direction: column; gap: 8px; border-top: 4px solid var(--gold); }
+.contest-cat:hover { transform: translateY(-6px); }
+.contest-cat.hackathon { border-top-color: #7c3aed; }
+.contest-cat.coding { border-top-color: #0ea5e9; }
+.contest-list { margin-top: 32px; }
+.coming-soon { display: flex; align-items: center; gap: 20px; padding: 28px 32px; border-radius: var(--radius); border: 2px dashed #c7d3f5; background: linear-gradient(120deg, var(--primary-soft), var(--gold-soft)); }
+.coming-soon h3 { margin-bottom: 4px; }
+.coming-soon > div { flex: 1; }
+.coming-soon .btn { flex-shrink: 0; }
+.coming-soon.compact { padding: 20px 24px; }
+.cs-icon { font-size: 2.2rem; width: 64px; height: 64px; display: grid; place-items: center; background: #fff; border-radius: 16px; flex-shrink: 0; box-shadow: var(--shadow); }
+.cat-head { display: flex; gap: 18px; align-items: center; margin-bottom: 28px; }
+.cat-head .icon { margin: 0; flex-shrink: 0; }
+
+.contest { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.contest-banner { position: relative; aspect-ratio: 1200 / 630; background: var(--bg-2); }
+.contest-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.auto-banner { height: 100%; display: grid; place-content: center; justify-items: center; gap: 8px; padding: 20px; text-align: center; color: #fff; background: linear-gradient(135deg, var(--primary), var(--navy-dark)); }
+.auto-banner.hackathon { background: linear-gradient(135deg, #6d28d9, #1e1b4b); }
+.auto-banner.coding { background: linear-gradient(135deg, #0369a1, #0a1640); }
+.auto-banner span { font-size: 2.4rem; }
+.auto-banner strong { font-size: 1.15rem; line-height: 1.3; }
+.status { position: absolute; top: 12px; left: 12px; font-size: .75rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: #fff; color: var(--navy-dark); box-shadow: var(--shadow); }
+.status.open { background: #16a34a; color: #fff; }
+.status.upcoming { background: var(--gold); }
+.status.closed { background: #e2e8f0; color: #475569; }
+.contest-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.contest-body .btn { margin-top: auto; }
+.contest-meta { display: grid; gap: 4px; font-size: .9rem; color: #334155; }
+.btn-disabled { background: #eef1f6; color: #64748b; cursor: default; }
+
+@media (max-width: 760px) {
+  .coming-soon { flex-direction: column; align-items: flex-start; padding: 24px; }
+  .cat-head { align-items: flex-start; }
+}

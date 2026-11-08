@@ -3,6 +3,7 @@ import Link from "next/link";
 import { services, stats, whyUs, site } from "@/data/site";
 import ServiceCard from "@/components/ServiceCard";
 import EnquiryForm from "@/components/EnquiryForm";
+import ContestsSection from "@/components/Contests";
 
 export default function Home() {
   return (
@@ -48,6 +49,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ContestsSection />
 
       <section className="section alt">
         <div className="container">

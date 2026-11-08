@@ -19,6 +19,7 @@ export default function Footer() {
           {services.map((s) => (
             <Link key={s.slug} href={`/services/${s.slug}`}>{s.title}</Link>
           ))}
+          <Link href="/contests">Contests &amp; Scholarship Tests</Link>
         </div>
         <div>
           <h4>Contact</h4>

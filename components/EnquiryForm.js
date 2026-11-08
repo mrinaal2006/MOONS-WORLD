@@ -24,6 +24,7 @@ export default function EnquiryForm() {
       <select name="service" defaultValue="" required>
         <option value="" disabled>Interested in…</option>
         {services.map((s) => <option key={s.slug}>{s.title}</option>)}
+        <option>Contests / Scholarship Test</option>
       </select>
       <textarea name="message" rows={3} placeholder="Message (optional)" />
       <button className="btn btn-primary" type="submit">Send Enquiry</button>
