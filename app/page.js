@@ -152,7 +152,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section id="online" className="section">
         <div className="container online">
           <div>
             <span className="pill">🌐 New • Learn from anywhere</span>
@@ -192,7 +192,7 @@ export default function Home() {
 
       <ContestsSection />
 
-      <section className="section alt">
+      <section id="why-us" className="section alt">
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Why Moon&apos;s World</span>
@@ -283,7 +283,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section id="supervision" className="section">
         <div className="container banner">
           <div>
             <h2>Under the direct supervision of <span className="hl-gold">Biswabaran Sir</span></h2>

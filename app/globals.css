@@ -598,3 +598,22 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 @media (max-width: 560px) { .org-strip { border-radius: 20px; } }
 @media (max-width: 1180px) and (min-width: 561px) { .services-grid.grid-3 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 860px) and (min-width: 561px) { .services-grid.grid-3 { grid-template-columns: 1fr 1fr; } }
+
+/* ═══ Active menu item (scroll-spy) ═══ */
+.nav-links a:not(.btn) { position: relative; transition: color .25s; }
+.nav-links a:not(.btn)::after { content: ""; position: absolute; left: 50%; right: 50%; bottom: -8px; height: 3px; border-radius: 3px; background: var(--gold); transition: left .3s cubic-bezier(.2, .8, .2, 1), right .3s cubic-bezier(.2, .8, .2, 1); }
+.nav-links a:not(.btn):hover::after { left: 30%; right: 30%; }
+.nav-links a.active { color: var(--navy-dark) !important; font-weight: 700; }
+.nav-links a.active::after { left: 0; right: 0; }
+@media (max-width: 1180px) {
+  .nav-links a:not(.btn)::after { display: none; }
+  .nav-links a.active { color: var(--navy-dark) !important; padding-left: 14px !important; border-left: 4px solid var(--gold); background: linear-gradient(90deg, var(--gold-soft), transparent); }
+}
+/* underline via scale (no stray dot when hidden) */
+.nav-links a:not(.btn)::after { left: 0; right: 0; transform: scaleX(0); opacity: 0; transition: transform .3s cubic-bezier(.2, .8, .2, 1), opacity .3s; }
+.nav-links a:not(.btn):hover::after { left: 0; right: 0; transform: scaleX(.45); opacity: .7; }
+.nav-links a.active::after { transform: scaleX(1); opacity: 1; }
+/* solid mobile menu panel (nested backdrop blur doesn't work inside the glass header) */
+@media (max-width: 1180px) {
+  .nav-links { background: #fff !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: 0 18px 30px rgba(0, 0, 0, .12); max-height: calc(100vh - 72px); overflow-y: auto; }
+}
