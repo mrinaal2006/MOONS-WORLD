@@ -639,3 +639,8 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 .uni-logo { width: 60px; height: 60px; flex-shrink: 0; display: grid; place-items: center; padding: 5px; border-radius: 14px; background: #fff; border: 1px solid #e5e5e5; box-shadow: 0 4px 12px rgba(0, 0, 0, .06); }
 .uni-logo img { width: 100%; height: 100%; object-fit: contain; }
 .uni-card .inst-logo { width: 60px; height: 60px; border-radius: 14px; }
+
+/* Larger brand name beside the menu-bar logo */
+.nav .brand { font-size: 1.4rem; }
+@media (max-width: 1260px) and (min-width: 1181px) { .nav .brand { font-size: 1.3rem; } }
+@media (max-width: 380px) { .nav .brand { font-size: 1.2rem; } }
