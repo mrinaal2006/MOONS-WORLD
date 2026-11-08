@@ -123,7 +123,8 @@ export const onlineInstitutes = [
         "fee": 98000
       }
     ],
-    "type": "Private"
+    "type": "Private",
+    "logo": "/universities/uttaranchal.png"
   },
   {
     "name": "Mizoram University",
@@ -236,6 +237,7 @@ export const onlineInstitutes = [
     "naac": null,
     "est": null,
     "onRequest": true,
-    "courses": []
+    "courses": [],
+    "logo": "/universities/adamas.png"
   }
 ];
