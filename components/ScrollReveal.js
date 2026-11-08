@@ -9,6 +9,7 @@ const SELECTOR = [
   ".vm-card", ".coming-soon", ".enquiry-cta", ".banner", ".about-grid > div:first-child",
   ".online > div:first-child", ".contact-grid > div:first-child", ".page-hero .container",
   ".hero-grid > div:first-child", ".cat-head", ".inst-head", ".centre-photo",
+  ".facility", ".g-item", ".price-card", ".why-box", ".vm-photo", ".flyer", ".offer-grid > div:last-child > h2",
 ].join(",");
 
 export default function ScrollReveal() {

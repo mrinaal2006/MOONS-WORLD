@@ -10,6 +10,7 @@ export const site = {
     "Residential & non-residential coaching for Class XI–XII, university admission in Bankura & Durgapur, online courses from IITs & renowned universities, and academic consultancy for B.Tech, M.Tech and Ph.D.",
   phone: "+91 79085 74323",
   phone2: "+91 70018 28820",
+  phone3: "+91 94345 88477",
   whatsapp: "917908574323", // country code + number, digits only
   email: "", // add an email address here to show it on the site
   address: "Scan Centre, Katjuridanga, Bankura – 722102, West Bengal",
@@ -54,7 +55,7 @@ export const hostels = [
 ];
 
 // Thin strip shown above the menu bar on every page.
-export const announcement = "Admissions open for Class XI – XII coaching";
+export const announcement = "বিশেষ ভর্তি সুযোগ • Class XI • ₹6000/month";
 
 export const nav = [
   { label: "Home", href: "/" },
@@ -297,3 +298,44 @@ export const about = {
     },
   ],
 };
+
+// ─────────────────────────────────────────────────────────────
+//  SPECIAL ADMISSION OFFER (from the Class XI admission flyer)
+// ─────────────────────────────────────────────────────────────
+export const admissionOffer = {
+  kicker: "উজ্জ্বল ভবিষ্যতের প্রথম পদক্ষেপ",
+  title: "বিশেষ ভর্তি সুযোগ!",
+  subtitle: "Special admission for Class XI (একাদশ শ্রেণী) students",
+  slogan: "শিখুন • গড়ুন • সফল হোন",
+  fee: "₹6000",
+  feeNote: "per month (প্রতি মাস)",
+  location: "Bankura (বাঁকুড়া)",
+  flyer: "/gallery/admission-flyer.jpg",
+  facilities: [
+    { icon: "🛏️", title: "Hostel accommodation", bn: "আবাসনের ব্যবস্থা", text: "Clean and safe hostel facility." },
+    { icon: "🍽️", title: "4 nutritious meals a day", bn: "দিনে ৪ বেলা পুষ্টিকর খাবার", text: "Balanced, healthy food every day." },
+    { icon: "📖", title: "Complete tuition & academic support", bn: "সম্পূর্ণ টিউশন ও একাডেমিক সহায়তা", text: "Subject-wise classes, notes and problem solving." },
+    { icon: "📝", title: "Weekly tests & evaluation", bn: "সাপ্তাহিক পরীক্ষা ও মূল্যায়ন", text: "Regular assessment to keep improving." },
+    { icon: "👨‍🏫", title: "Experienced, caring teachers", bn: "অভিজ্ঞ ও যত্নশীল শিক্ষকবৃন্দ", text: "Personal attention to every student." },
+    { icon: "🎯", title: "Career guidance & counselling", bn: "ক্যারিয়ার গাইডেন্স ও কাউন্সেলিং", text: "Right direction for future plans and mental support." },
+    { icon: "🛡️", title: "Disciplined & safe environment", bn: "শৃঙ্খলাবদ্ধ ও নিরাপদ পরিবেশ", text: "24×7 security and a calm study atmosphere." },
+    { icon: "👥", title: "Limited seats, small batches", bn: "সীমিত আসন • ব্যক্তিগত গুরুত্ব", text: "Quality teaching with more individual focus." },
+  ],
+  why: [
+    "Special focus on building strong fundamentals",
+    "Extra explanation for weak subjects",
+    "Preparation for Board & competitive exams",
+    "Rich study material and notes",
+    "Regular parent communication & counselling",
+  ],
+};
+
+// ─────────────────────────────────────────────────────────────
+//  GALLERY (photos in /public/gallery/)
+// ─────────────────────────────────────────────────────────────
+export const gallery = [
+  { src: "/gallery/self-study.jpg", w: 1400, h: 882, caption: "Supervised self-study session", size: "wide" },
+  { src: "/gallery/class-room.jpg", w: 610, h: 1070, caption: "Daily classes in Moon's World uniform", size: "tall" },
+  { src: "/gallery/class-teaching.jpg", w: 610, h: 745, caption: "Classroom teaching" },
+  { src: "/gallery/felicitation.jpg", w: 1400, h: 630, caption: "Student felicitation programme" },
+];

@@ -25,6 +25,7 @@ export default function Footer() {
           <h4>Contact</h4>
           <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
           {site.phone2 && <a href={`tel:${site.phone2.replace(/\s/g, "")}`}>{site.phone2}</a>}
+          {site.phone3 && <a href={`tel:${site.phone3.replace(/\s/g, "")}`}>{site.phone3}</a>}
           {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
           <a href={site.mapLink} target="_blank" rel="noopener noreferrer">{site.address}</a>
         </div>

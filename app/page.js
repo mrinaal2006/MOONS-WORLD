@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services, stats, whyUs, site, onlineInstitutes, team, hostels, about } from "@/data/site";
+import { services, stats, whyUs, site, onlineInstitutes, team, hostels, about, admissionOffer, gallery } from "@/data/site";
 import ServiceCard from "@/components/ServiceCard";
 import EnquiryForm from "@/components/EnquiryForm";
 import ContestsSection from "@/components/Contests";
@@ -23,13 +23,19 @@ export default function Home() {
               <Link href="/#services" className="btn btn-ghost">Explore Services</Link>
             </div>
           </div>
-          <div className="hero-art">
+          <div className="hero-photos">
             <div className="glow" />
-            <div className="logo-orbit" aria-hidden="true" />
-            <div className="logo-glass">
-              <Image src="/logo.png" alt={`${site.name} logo`} width={474} height={638} priority />
+            <div className="photo-main glass-frame">
+              <Image src="/gallery/self-study.jpg" alt="Moon's World students studying" width={1400} height={882} priority sizes="(max-width: 960px) 100vw, 520px" />
             </div>
-            <p className="tagline">{site.tagline}</p>
+            <div className="photo-float glass-frame">
+              <Image src="/gallery/class-teaching.jpg" alt="Classroom teaching at Moon's World" width={610} height={745} sizes="180px" />
+            </div>
+            <Link href="/#admission" className="offer-badge">
+              <span>Class XI admission</span>
+              <strong>{admissionOffer.fee}<small>/month</small></strong>
+            </Link>
+            <div className="hero-chip">⭐ {site.tagline}</div>
           </div>
         </div>
         <div className="container stats">
@@ -39,6 +45,52 @@ export default function Home() {
               <span>{s.label}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id="admission" className="section offer-section">
+        <div className="container offer-grid">
+          <a href={admissionOffer.flyer} target="_blank" rel="noopener noreferrer" className="flyer glass-frame" title="Open full flyer">
+            <Image src={admissionOffer.flyer} alt="Moon's World Class XI special admission flyer" width={900} height={1350} sizes="(max-width: 960px) 90vw, 420px" />
+            <span className="flyer-zoom">🔍 View full flyer</span>
+          </a>
+          <div>
+            <span className="pill">{admissionOffer.kicker}</span>
+            <h2 className="offer-title" lang="bn">{admissionOffer.title}</h2>
+            <p className="offer-sub">{admissionOffer.subtitle}</p>
+            <p className="offer-slogan" lang="bn">{admissionOffer.slogan}</p>
+
+            <div className="price-card">
+              <div>
+                <span className="price-label">Special fee only</span>
+                <strong className="price">{admissionOffer.fee}</strong>
+                <span className="price-note">{admissionOffer.feeNote}</span>
+              </div>
+              <div className="price-loc">📍 {admissionOffer.location}</div>
+            </div>
+
+            <div className="facility-grid">
+              {admissionOffer.facilities.map((f) => (
+                <div key={f.title} className="facility">
+                  <span className="facility-icon">{f.icon}</span>
+                  <div>
+                    <strong>{f.title}</strong>
+                    <span lang="bn">{f.bn}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="why-box">
+              <h3>Why MoonsWorld?</h3>
+              <ul>{admissionOffer.why.map((w) => <li key={w}>{w}</li>)}</ul>
+            </div>
+
+            <div className="hero-cta">
+              <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="btn btn-primary">📞 আজই ভর্তি হোন: {site.phone}</a>
+              <Link href="/#contact" className="btn btn-ghost">Request a call back</Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -63,6 +115,10 @@ export default function Home() {
               {about.paragraphs.map((p) => <p key={p} className="about-text">{p}</p>)}
             </div>
             <div className="vm">
+              <div className="vm-photo glass-frame">
+                <Image src="/gallery/class-room.jpg" alt="Students attending class at Moon's World" width={610} height={1070} sizes="(max-width: 960px) 100vw, 480px" />
+                <span className="vm-photo-tag">📍 Our classroom, Bankura</span>
+              </div>
               <div className="vm-card vision">
                 <span className="vm-icon">🔭</span>
                 <div>
@@ -184,6 +240,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="gallery" className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Gallery</span>
+            <h2>Life at <span className="hl">Moon&apos;s World</span></h2>
+            <p className="muted">Real classrooms, real students, every day.</p>
+          </div>
+          <div className="gallery">
+            {gallery.map((g) => (
+              <figure key={g.src} className={`g-item glass-frame ${g.size || ""}`}>
+                <Image src={g.src} alt={g.caption} width={g.w} height={g.h} sizes="(max-width: 760px) 100vw, 50vw" />
+                <figcaption>{g.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="hostels" className="section alt">
         <div className="container">
           <div className="section-head">
@@ -229,7 +303,7 @@ export default function Home() {
               <Image src="/team/centre.jpg" alt="Moon's World centre, Katjuridanga, Bankura" width={1400} height={865} sizes="(max-width: 960px) 100vw, 560px" />
             </div>
             <ul className="contact-list">
-              <li>📞 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>{site.phone2 && <> / <a href={`tel:${site.phone2.replace(/\s/g, "")}`}>{site.phone2}</a></>}</li>
+              <li>📞 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>{site.phone2 && <> / <a href={`tel:${site.phone2.replace(/\s/g, "")}`}>{site.phone2}</a></>}{site.phone3 && <> / <a href={`tel:${site.phone3.replace(/\s/g, "")}`}>{site.phone3}</a></>}</li>
               {site.email && <li>✉️ <a href={`mailto:${site.email}`}>{site.email}</a></li>}
               <li>📍 <a href={site.mapLink} target="_blank" rel="noopener noreferrer">{site.address}</a></li>
             </ul>
