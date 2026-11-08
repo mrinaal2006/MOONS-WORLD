@@ -851,3 +851,18 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 .cd-field dd p { margin: 0; }
 .contest-detail.featured .cd-fields { align-items: start; }
 .cd-field.note dt + dd .cd-note { font-style: normal; color: #444; }
+
+/* Highlight the category cards after "Back to Categories" */
+.flash { animation: flashCats 1.4s ease .35s; border-radius: 22px; }
+@keyframes flashCats { 0%, 100% { box-shadow: 0 0 0 0 rgba(242, 183, 5, 0); } 30% { box-shadow: 0 0 0 10px rgba(242, 183, 5, .45); } }
+.back-btn { position: relative; z-index: 2; cursor: pointer; }
+
+/* Fix: the widget's (invisible) wrapper must never block clicks on the page */
+.doubt { pointer-events: none; }
+.doubt-fab, .doubt.is-open .doubt-panel { pointer-events: auto; }
+.doubt-panel { pointer-events: none; }
+/* Keep the open chat panel clear of the menu bar / page header on short screens */
+.doubt-panel { display: flex; flex-direction: column; max-height: max(300px, calc(100vh - 290px)); max-height: max(300px, calc(100dvh - 290px)); }
+.doubt-head, .doubt-form { flex-shrink: 0; }
+.doubt-body { overflow-y: auto; min-height: 0; flex: 1 1 auto; }
+@media (max-width: 560px) { .doubt-panel { max-height: calc(100dvh - 200px); } }

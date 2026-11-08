@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { contestCategories, contests, categoryBySlug } from "@/data/contests";
 import Breadcrumbs from "@/components/contests/Breadcrumbs";
 import CategoryExplorer from "@/components/contests/CategoryExplorer";
+import BackToCategories from "@/components/contests/BackToCategories";
 
 export const dynamicParams = false;
 
@@ -31,7 +32,7 @@ export default async function CategoryPage({ params }) {
         <div className="container">
           <div className="cat-hero-top">
             <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contests", href: "/contests" }, { label: cat.title }]} />
-            <Link href="/contests#categories" className="back-btn">← Back to Categories</Link>
+            <BackToCategories />
           </div>
 
           <div className="cat-hero-grid">
@@ -89,7 +90,7 @@ export default async function CategoryPage({ params }) {
             ))}
           </div>
           <div className="center" style={{ marginTop: 28 }}>
-            <Link href="/contests#categories" className="btn btn-ghost">← Back to Categories</Link>
+            <BackToCategories className="btn btn-ghost" />
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import DoubtWidget from "@/components/DoubtWidget";
+import RouteTracker from "@/components/RouteTracker";
 import { site } from "@/data/site";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], display: "swap" });
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <ScrollReveal />
         <DoubtWidget />
+        <RouteTracker />
       </body>
     </html>
   );
