@@ -623,3 +623,14 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 .on-request { display: grid; gap: 4px; padding: 16px 18px; border-radius: 12px; background: var(--gold-soft); border: 1px dashed #f2d27a; }
 .on-request strong { color: var(--navy-dark); }
 .on-request span { font-size: .88rem; color: #4a3600; }
+
+/* Collapsible university cards */
+.course-note { font-size: .95rem; color: var(--navy-dark); padding: 12px 14px; border-radius: 12px; background: rgba(0, 0, 0, .04); }
+.course-note strong { font-weight: 700; }
+.explore-btn { border: 0; background: none; font: inherit; cursor: pointer; padding: 0; justify-self: start; color: var(--navy-dark); }
+.explore-btn .arrow { transition: background .25s, color .25s; }
+.explore-btn.open .arrow, .explore-btn:hover .arrow { background: var(--primary); color: #fff; }
+.course-panel { display: grid; gap: 14px; animation: panelIn .35s cubic-bezier(.2, .8, .2, 1); }
+.course-panel[hidden] { display: none; }
+@keyframes panelIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.enquire-uni { justify-self: start; }

@@ -8,6 +8,13 @@ const LEVELS = ["All", "UG", "PG"];
 export default function ProgramExplorer() {
   const [level, setLevel] = useState("All");
   const [cat, setCat] = useState("All");
+  const [openUni, setOpenUni] = useState(() => new Set());
+  const toggle = (name) =>
+    setOpenUni((prev) => {
+      const next = new Set(prev);
+      next.has(name) ? next.delete(name) : next.add(name);
+      return next;
+    });
 
   const cats = useMemo(() => {
     const set = new Set();
@@ -60,26 +67,46 @@ export default function ProgramExplorer() {
                 </div>
               </div>
             </header>
-            {u.onRequest && !u.shown.length ? (
-              <div className="on-request">
-                <strong>Courses &amp; fees on request</strong>
-                <span>UG and PG programmes available. Contact us for the latest course list and fee structure.</span>
-              </div>
-            ) : (
-            <ul className="course-list">
-              {u.shown.map((c) => (
-                <li key={c.level + c.name}>
-                  <div>
-                    <span className={`lvl ${c.level.toLowerCase()}`}>{c.level}</span>
-                    <strong>{c.name}</strong>
-                    <small>{c.duration}</small>
+            {(() => {
+              const ug = u.shown.filter((c) => c.level === "UG").length;
+              const pg = u.shown.length - ug;
+              const isOpen = openUni.has(u.name);
+              const id = "courses-" + u.short;
+              if (u.onRequest && !u.shown.length) {
+                return (
+                  <>
+                    <p className="course-note">📘 Courses &amp; fees available on request</p>
+                    <a href="#enquire" className="explore">Enquire for details <span className="arrow">→</span></a>
+                  </>
+                );
+              }
+              return (
+                <>
+                  <p className="course-note">
+                    📘 <strong>{u.shown.length} {u.shown.length === 1 ? "course" : "courses"}</strong> available
+                    <span className="muted"> ({[ug && `${ug} UG`, pg && `${pg} PG`].filter(Boolean).join(" · ")})</span>
+                  </p>
+                  <button type="button" className={`explore explore-btn ${isOpen ? "open" : ""}`} aria-expanded={isOpen} aria-controls={id} onClick={() => toggle(u.name)}>
+                    {isOpen ? "Hide courses" : "Explore courses"} <span className="arrow">{isOpen ? "↑" : "↓"}</span>
+                  </button>
+                  <div id={id} className={`course-panel ${isOpen ? "open" : ""}`} hidden={!isOpen}>
+                    <ul className="course-list">
+                      {u.shown.map((c) => (
+                        <li key={c.level + c.name}>
+                          <div>
+                            <span className={`lvl ${c.level.toLowerCase()}`}>{c.level}</span>
+                            <strong>{c.name}</strong>
+                            <small>{c.duration}</small>
+                          </div>
+                          <span className="fee">{inr(c.fee)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <a href="#enquire" className="btn btn-primary enquire-uni">Enquire for admission</a>
                   </div>
-                  <span className="fee">{inr(c.fee)}</span>
-                </li>
-              ))}
-            </ul>
-            )}
-            <a href="#enquire" className="explore">Enquire for admission <span className="arrow">→</span></a>
+                </>
+              );
+            })()}
           </article>
         ))}
       </div>
