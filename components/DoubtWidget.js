@@ -48,8 +48,19 @@ export default function DoubtWidget() {
 
   // Pop up automatically every time the website is opened
   useEffect(() => {
-    const t = setTimeout(() => { if (!userClosed.current) show(); }, AUTO_OPEN_MS);
-    return () => clearTimeout(t);
+    // If the pop-up ad is showing, wait until it is closed before opening.
+    let later;
+    const tryOpen = () => {
+      if (userClosed.current) return;
+      if (document.documentElement.dataset.promo) {
+        const onClosed = () => { later = setTimeout(() => { if (!userClosed.current) show(); }, 1800); };
+        window.addEventListener("mw-promo-closed", onClosed, { once: true });
+        return;
+      }
+      show();
+    };
+    const t = setTimeout(tryOpen, AUTO_OPEN_MS);
+    return () => { clearTimeout(t); clearTimeout(later); };
   }, []);
 
   // Esc closes
