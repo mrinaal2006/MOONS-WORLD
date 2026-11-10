@@ -18,6 +18,26 @@ export const site = {
 };
 
 // Leadership shown on the home page (photos are in /public/team/)
+// Mentors highlighted on the home page (#mentor). Photos in /public/team/.
+export const mentors = [
+  {
+    name: "Dr. Joyprakash Bit",
+    role: "NEET Mentor",
+    qualification: "MBBS (completed 2024)",
+    photo: "/team/neet-mentor.jpg",
+    photoWidth: 422,
+    photoHeight: 548,
+    achievements: [
+      { big: "Rank 7", label: "Madhyamik 2015", sub: "WBBSE" },
+      { big: "Rank 11", label: "Higher Secondary 2017", sub: "WBHSE" },
+      { big: "MBBS", label: "Completed 2024", sub: "Doctor & mentor" },
+    ],
+    pitch:
+      "Learn NEET from someone who has walked the path. A state rank-holder in both Madhyamik and Higher Secondary, and now a qualified doctor, Dr. Joyprakash Bit guides our NEET students with proven study strategies, concept clarity and personal mentorship.",
+    points: ["Proven exam strategy from a state rank-holder", "Biology, Physics & Chemistry concept clarity", "Doubt-solving and one-to-one guidance", "Motivation from a doctor who made it"],
+  },
+];
+
 export const team = [
   {
     name: "Biswajit Mondal",

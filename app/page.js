@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Photo from "@/components/Photo";
 import Link from "next/link";
-import { services, stats, whyUs, site, onlineInstitutes, team, hostels, about, admissionOffer, gallery } from "@/data/site";
+import { services, stats, whyUs, site, onlineInstitutes, team, hostels, about, admissionOffer, gallery, mentors } from "@/data/site";
 import ServiceCard from "@/components/ServiceCard";
 import EnquiryForm from "@/components/EnquiryForm";
 import ContestsSection from "@/components/Contests";
@@ -152,6 +152,41 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {mentors.map((m) => (
+        <section key={m.name} id="mentor" className="section mentor-section">
+          <div className="container mentor">
+            <div className="mentor-photo-wrap">
+              <div className="mentor-ring" aria-hidden="true" />
+              <div className="mentor-photo">
+                <Photo src={m.photo} alt={`${m.name}, ${m.role}`} width={m.photoWidth} height={m.photoHeight} sizes="(max-width: 960px) 70vw, 360px" />
+              </div>
+              <span className="mentor-tag">🩺 {m.role}</span>
+            </div>
+            <div className="mentor-info">
+              <span className="eyebrow">Meet our NEET Mentor</span>
+              <h2>{m.name}</h2>
+              <p className="mentor-qual">{m.qualification}</p>
+              <div className="mentor-stats">
+                {m.achievements.map((a) => (
+                  <div key={a.label} className="mentor-stat">
+                    <strong>{a.big}</strong>
+                    <span>{a.label}</span>
+                    <small>{a.sub}</small>
+                  </div>
+                ))}
+              </div>
+              <p className="mentor-pitch">{m.pitch}</p>
+              <ul className="mentor-points">{m.points.map((p) => <li key={p}>{p}</li>)}</ul>
+              <div className="hero-cta">
+                <Link href="/#contact" className="btn btn-primary">Talk to our NEET mentor</Link>
+                <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to know about NEET coaching with Dr. Joyprakash Bit.")}`}
+                  target="_blank" rel="noopener noreferrer" className="btn btn-ghost">💬 WhatsApp enquiry</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
 
       <section id="online" className="section">
         <div className="container online">
