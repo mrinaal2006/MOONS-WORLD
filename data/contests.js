@@ -129,7 +129,9 @@ export const contestsNote =
 //   title     : contest name
 //   status    : "open" | "upcoming" | "ongoing" | "closed" | "past"
 //   formLink  : official registration link (Register button only appears if set)
-//   banner    : optional image in /public/contests/ (1200 × 630 px)
+//   banner    : optional image in /public/contests/ (1200 × 630 px), shown on both cards
+//   thumb     : optional image (1200 × 630 px) shown only on the short card (home page, /contests)
+//   poster    : optional full poster, opened by the "View poster" button
 // Plus the category's own fields (see `fields` above), e.g. for a scholarship test:
 //   { id: "mw-scholarship-2027", category: "scholarship", group: "Class IX – X",
 //     title: "…", status: "open", eligibility: "…", examPattern: "…",
@@ -204,6 +206,7 @@ export const contests = [
     ],
     contact: "+91 9434588477",
     poster: "/contests/hackathon-2026-poster.jpg",
+    thumb: "/contests/hackathon-2026-card.jpg", // image on the short contest card (home page, /contests)
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdkvvDyJU1cJGlbeAsRwkylivYxakY527OdOAmx620mriiruw/viewform?usp=dialog",
   },
 ];

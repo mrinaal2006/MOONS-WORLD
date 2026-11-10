@@ -40,9 +40,9 @@ export function ContestCard({ c }) {
   return (
     <article className="card contest">
       <div className="contest-banner">
-        {c.banner ? (
+        {(c.thumb || c.banner) ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={c.banner} alt={`${c.title} banner`} loading="lazy" />
+          <img src={c.thumb || c.banner} alt={`${c.title} banner`} loading="lazy" />
         ) : (
           <div className={`auto-banner ${cat.key}`}>
             <span>{cat.icon}</span>
