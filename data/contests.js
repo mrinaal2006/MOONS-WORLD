@@ -111,7 +111,7 @@ export const categoryByKey = (key) => contestCategories.find((c) => c.key === ke
 
 export const statusLabel = {
   open: "Registration Open",
-  upcoming: "Coming Soon",
+  upcoming: "Registration Opening Soon",
   ongoing: "Ongoing",
   closed: "Closed",
   past: "Completed",
@@ -147,7 +147,7 @@ export const contests = [
     subtitle: "An academic opportunity for students of Classes IX and X | WBBSE",
     description:
       "Moon's World is organising the Keshab Chandra Goswami Scholarship Test 2026 for students of Classes IX and X under WBBSE. The initiative is intended to recognise meritorious students and provide educational support towards their future studies in Classes XI and XII.",
-    status: "open",
+    status: "upcoming", // change to "open" when registration starts
     eligibility: "Students currently studying in Class IX or X under WBBSE.",
     examPattern: "Online test · Full marks: 40",
     dates: [
