@@ -847,3 +847,7 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 .doubt-head, .doubt-form { flex-shrink: 0; }
 .doubt-body { overflow-y: auto; min-height: 0; flex: 1 1 auto; }
 @media (max-width: 560px) { .doubt-panel { max-height: calc(100dvh - 200px); } }
+.cd-prizes { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.cd-foot.has-poster { display: flex; flex-wrap: wrap; gap: 12px; }
+.cd-foot.has-poster .btn { flex: 1 1 200px; }
+@media (min-width: 900px) { .contest-detail.featured .cd-foot.has-poster .btn { flex: 0 0 auto; } }

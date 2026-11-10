@@ -62,13 +62,16 @@ export default function ContestDetailCard({ contest: c, category, groupLabel }) 
         ))}
       </dl>
 
-      <footer className="cd-foot">
+      <footer className={`cd-foot ${c.poster ? "has-poster" : ""}`}>
         {canRegister ? (
           <a href={c.formLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Register now (Google Form) ↗</a>
         ) : (
           <span className="btn btn-disabled">
             {c.status === "closed" || c.status === "past" ? "Registration closed" : "Registration opens soon"}
           </span>
+        )}
+        {c.poster && (
+          <a href={c.poster} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">🖼️ View poster</a>
         )}
       </footer>
     </article>
