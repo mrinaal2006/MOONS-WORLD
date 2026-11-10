@@ -1,5 +1,5 @@
 import { contestCategories, contests } from "@/data/site";
-import { ContestCard, CategoryCard, OrganizersSection } from "@/components/Contests";
+import { ContestCard, CategoryCard } from "@/components/Contests";
 import EmptyState from "@/components/contests/EmptyState";
 import Breadcrumbs from "@/components/contests/Breadcrumbs";
 
@@ -45,7 +45,6 @@ export default function ContestsPage() {
         </div>
       </section>
 
-      <OrganizersSection />
     </>
   );
 }

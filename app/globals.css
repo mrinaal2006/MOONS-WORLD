@@ -576,26 +576,7 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
   .seg button { padding: 8px 14px; font-size: .85rem; }
 }
 
-/* ═══ Contest organizers ═══ */
-.org-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; }
-.org-card { width: min(320px, 100%); display: grid; justify-items: center; text-align: center; gap: 12px; padding: 34px 26px 30px; border-radius: 20px; background: var(--glass); -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s; position: relative; overflow: hidden; }
-.org-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 86px; background: linear-gradient(120deg, var(--primary), var(--navy-dark)); }
-.org-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-.org-card h3 { font-size: 1.3rem; margin-top: 4px; }
-.org-ring { position: relative; padding: 5px; border-radius: 50%; background: conic-gradient(var(--gold), #fff3b0, var(--primary), var(--gold)); animation: spin 8s linear infinite; }
-.org-ring .org-avatar { animation: spin 8s linear infinite reverse; }
-.org-avatar { position: relative; display: grid; place-items: center; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg, #fff, var(--primary-soft)); color: var(--primary); font-weight: 800; letter-spacing: .02em; border: 3px solid #fff; flex-shrink: 0; }
-.org-ring .org-avatar { font-size: 2rem; }
-.org-avatar img { object-fit: cover; }
-.org-strip { margin-top: 24px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 14px 22px; padding: 16px 24px; border-radius: 999px; background: var(--glass); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); transition: .3s; }
-.org-strip:hover { box-shadow: var(--shadow-lg); }
-.org-strip:hover .arrow { background: var(--primary); color: #fff; }
-.org-label { font-weight: 600; color: var(--muted); font-size: .92rem; }
-.org-people { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: center; }
-.org-person { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: var(--navy-dark); }
-.org-person .org-avatar { font-size: .85rem; border: 2px solid var(--gold); }
-.org-strip .arrow { width: 44px; height: 32px; }
-@media (max-width: 560px) { .org-strip { border-radius: 20px; } }
+
 @media (max-width: 1180px) and (min-width: 561px) { .services-grid.grid-3 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 860px) and (min-width: 561px) { .services-grid.grid-3 { grid-template-columns: 1fr 1fr; } }
 
