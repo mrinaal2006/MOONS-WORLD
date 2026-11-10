@@ -205,7 +205,7 @@ export const contests = [
       "Complete the registration process as instructed by the organizers.",
     ],
     contact: "+91 9434588477",
-    poster: "/contests/hackathon-2026-poster.jpg",
+    poster: "/contests/hackathon-2026-poster-v2.jpg",
     thumb: "/contests/hackathon-2026-card.jpg", // image on the short contest card (home page, /contests)
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdkvvDyJU1cJGlbeAsRwkylivYxakY527OdOAmx620mriiruw/viewform?usp=dialog",
   },

@@ -15,7 +15,7 @@ export const promo = {
     "🏆 Cash prizes: ₹6,000 · ₹2,000 · ₹1,000 · ₹600",
     "⚡ Limited seats: maximum 30 teams",
   ],
-  image: "/contests/hackathon-2026-poster.jpg",
+  image: "/contests/hackathon-2026-poster-v2.jpg",
   imageWidth: 1200,
   imageHeight: 1697,
   primary: {
