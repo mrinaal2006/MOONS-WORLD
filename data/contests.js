@@ -106,6 +106,9 @@ export const contestCategories = [
   },
 ];
 
+// A contest's group can be one value ("College") or several (["School", "College"]).
+export const groupsOf = (c) => (Array.isArray(c.group) ? c.group : c.group ? [c.group] : []);
+
 export const categoryBySlug = (slug) => contestCategories.find((c) => c.slug === slug);
 export const categoryByKey = (key) => contestCategories.find((c) => c.key === key);
 
@@ -125,7 +128,8 @@ export const contestsNote =
 // Add real contests only. Common fields for every entry:
 //   id        : unique, e.g. "scholarship-2027"
 //   category  : "scholarship" | "hackathon" | "coding"
-//   group     : one of that category's group values (e.g. "Class IX – X", "College", "Advanced")
+//   group     : one of that category's group values (e.g. "Class IX – X", "College", "Advanced"),
+//               or a list for several, e.g. ["School", "College"]
 //   title     : contest name
 //   status    : "open" | "upcoming" | "ongoing" | "closed" | "past"
 //   formLink  : official registration link (Register button only appears if set)
@@ -178,7 +182,7 @@ export const contests = [
   {
     id: "hackathon-2026",
     category: "hackathon",
-    group: "College",
+    group: ["School", "College"],
     featured: true,
     title: "HACKATHON 2026",
     subtitle: "Innovate | Collaborate | Code | Create Impact",

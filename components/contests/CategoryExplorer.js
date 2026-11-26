@@ -2,7 +2,7 @@
 import { useMemo, useState } from "react";
 import ContestDetailCard from "./ContestDetailCard";
 import EmptyState from "./EmptyState";
-import { statusLabel } from "@/data/contests";
+import { statusLabel, groupsOf } from "@/data/contests";
 
 const SEARCH_KEYS = ["title", "organizer", "eligibility", "problem", "examPattern", "rewards", "prizes", "difficulty", "syllabus", "topics", "subtitle", "description", "sponsoredBy", "collaborator", "venue"];
 const STATUS_FILTERS = ["all", "open", "upcoming", "closed"];
@@ -26,14 +26,14 @@ export default function CategoryExplorer({ category, items }) {
     () =>
       items.filter(
         (c) =>
-          (group === "all" || c.group === group) &&
+          (group === "all" || groupsOf(c).includes(group)) &&
           (category.sections || status === "all" || c.status === status || (status === "closed" && c.status === "past")) &&
           matches(c, query)
       ),
     [items, group, status, query, category.sections]
   );
 
-  const countIn = (v) => items.filter((c) => c.group === v).length;
+  const countIn = (v) => items.filter((c) => groupsOf(c).includes(v)).length;
 
   // Blocks to render: status sections (hackathons, coding) or one block per group (scholarships)
   const blocks = category.sections
@@ -49,7 +49,7 @@ export default function CategoryExplorer({ category, items }) {
           key: g.value,
           title: g.label,
           empty: `No scholarship tests for ${g.label} yet. Stay tuned!`,
-          list: filtered.filter((c) => c.group === g.value),
+          list: filtered.filter((c) => groupsOf(c).includes(g.value)),
         }));
 
   return (
@@ -105,7 +105,7 @@ export default function CategoryExplorer({ category, items }) {
           {b.list.length ? (
             <div className="cx-grid">
               {b.list.map((c) => (
-                <ContestDetailCard key={c.id || c.title} contest={c} category={category} groupLabel={labelOf(c.group)} />
+                <ContestDetailCard key={c.id || c.title} contest={c} category={category} groupLabels={groupsOf(c).map(labelOf)} />
               ))}
             </div>
           ) : (

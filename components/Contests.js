@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Photo from "@/components/Photo";
 import { contestCategories, contests, contestsNote } from "@/data/site";
-import { statusLabel } from "@/data/contests";
+import { statusLabel, groupsOf } from "@/data/contests";
 
 const catOf = (key) => contestCategories.find((c) => c.key === key) || contestCategories[0];
 
@@ -58,7 +58,7 @@ export function ContestCard({ c }) {
         {c.description && <p className="muted">{c.description}</p>}
         <ul className="contest-meta">
           {(c.date || c.startDate || c.dates?.[0]?.date) && <li>📅 {c.date || c.startDate || `${c.dates[0].label}: ${c.dates[0].date}`}</li>}
-          {c.group && <li>🏷️ {c.group}</li>}
+          {groupsOf(c).length > 0 && <li>🏷️ {groupsOf(c).join(" & ")}</li>}
           {c.eligibility && <li>🎯 {c.eligibility}</li>}
         </ul>
         {open ? (

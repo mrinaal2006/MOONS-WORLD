@@ -30,7 +30,7 @@ function FieldValue({ f, value }) {
 
 // Generic contest card: shows only the fields configured for its category,
 // and only those that actually have a value.
-export default function ContestDetailCard({ contest: c, category, groupLabel }) {
+export default function ContestDetailCard({ contest: c, category, groupLabels = [] }) {
   const fields = category.fields.filter((f) => {
     const v = c[f.key];
     return v !== undefined && v !== null && v !== "" && !(Array.isArray(v) && !v.length);
@@ -46,7 +46,7 @@ export default function ContestDetailCard({ contest: c, category, groupLabel }) 
       <header className="cd-head">
         <div className="cd-badges">
           <span className={`status ${c.status}`}>{statusLabel[c.status] || c.status}</span>
-          {groupLabel && <span className="cd-group">{groupLabel}</span>}
+          {groupLabels.map((g) => <span key={g} className="cd-group">{g}</span>)}
         </div>
         <h3>{c.title}</h3>
         {c.notice && <p className="cd-notice" role="status">⚠️ {c.notice}</p>}
