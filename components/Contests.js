@@ -54,6 +54,7 @@ export function ContestCard({ c }) {
       <div className="contest-body">
         <span className="tag">{cat.icon} {cat.title}</span>
         <h3>{c.title}</h3>
+        {c.notice && <p className="cd-notice">⚠️ {c.notice}</p>}
         {c.description && <p className="muted">{c.description}</p>}
         <ul className="contest-meta">
           {(c.date || c.startDate || c.dates?.[0]?.date) && <li>📅 {c.date || c.startDate || `${c.dates[0].label}: ${c.dates[0].date}`}</li>}

@@ -49,6 +49,7 @@ export default function ContestDetailCard({ contest: c, category, groupLabel }) 
           {groupLabel && <span className="cd-group">{groupLabel}</span>}
         </div>
         <h3>{c.title}</h3>
+        {c.notice && <p className="cd-notice" role="status">⚠️ {c.notice}</p>}
         {c.subtitle && <p className="cd-sub">{c.subtitle}</p>}
         {c.description && <p className="cd-desc">{c.description}</p>}
       </header>

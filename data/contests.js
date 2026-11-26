@@ -189,7 +189,8 @@ export const contests = [
     collaborator: "AICT Pvt. Ltd. – We Make It Happen (Krishna Kumar Yadav, Director)",
     eligibility: "Students, developers, innovators and creative thinkers.",
     seats: "Limited seats: maximum 30 teams",
-    date: "28 November 2026",
+    date: "Mid-December 2026 (exact date to be announced)",
+    notice: "Postponed: the hackathon has moved from 28 November to mid-December 2026. The exact date will be announced shortly. Stay tuned!",
     venue: "Anovatech Institute of Crystalline Technology Pvt. Ltd., A1/21, Sahid Sukumar Banerjee Sarani, Aranyak (West), Bidhannagar, Durgapur, West Bengal – 713212",
     prizes: [
       { place: "1st Prize", items: ["₹6,000"] },
@@ -205,8 +206,8 @@ export const contests = [
       "Complete the registration process as instructed by the organizers.",
     ],
     contact: "+91 9434588477",
-    poster: "/contests/hackathon-2026-poster-v2.jpg",
-    thumb: "/contests/hackathon-2026-card.jpg", // image on the short contest card (home page, /contests)
+    poster: "/contests/hackathon-2026-poster-v3.jpg",
+    thumb: "/contests/hackathon-2026-card-v2.jpg", // image on the short contest card (home page, /contests)
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSdkvvDyJU1cJGlbeAsRwkylivYxakY527OdOAmx620mriiruw/viewform?usp=dialog",
   },
 ];
