@@ -1,5 +1,6 @@
 import { statusLabel } from "@/data/contests";
 import PosterButton from "./PosterButton";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 function FieldValue({ f, value }) {
   if (f.type === "list") {
@@ -11,7 +12,7 @@ function FieldValue({ f, value }) {
       <div className="cd-prizes">
         {value.map((p, i) => (
           <div key={p.place} className={`cd-prize p${i + 1}`}>
-            <strong>{["🥇", "🥈", "🥉"][i] || "🏅"} {p.place}</strong>
+            <strong><Emoji e={["🥇", "🥈", "🥉"][i] || "🏅"} size="1.4em" /> {p.place}</strong>
             <ul>{p.items.map((it) => <li key={it}>{it}</li>)}</ul>
           </div>
         ))}
@@ -50,7 +51,7 @@ export default function ContestDetailCard({ contest: c, category, groupLabels = 
           {groupLabels.map((g) => <span key={g} className="cd-group">{g}</span>)}
         </div>
         <h3>{c.title}</h3>
-        {c.notice && <p className="cd-notice" role="status">⚠️ {c.notice}</p>}
+        {c.notice && <p className="cd-notice" role="status"><Emoji e="⚠️" /> {c.notice}</p>}
         {c.subtitle && <p className="cd-sub">{c.subtitle}</p>}
         {c.description && <p className="cd-desc">{c.description}</p>}
       </header>
@@ -58,7 +59,7 @@ export default function ContestDetailCard({ contest: c, category, groupLabels = 
       <dl className="cd-fields">
         {fields.map((f) => (
           <div key={f.key} className={`cd-field ${f.type}`}>
-            {f.label && <dt><span aria-hidden="true">{f.icon}</span> {f.label}</dt>}
+            {f.label && <dt><Emoji e={f.icon} size="1.35em" /> {f.label}</dt>}
             <dd><FieldValue f={f} value={c[f.key]} /></dd>
           </div>
         ))}

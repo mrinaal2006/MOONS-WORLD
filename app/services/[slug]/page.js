@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { services, site } from "@/data/site";
 import ProgramExplorer from "@/components/ProgramExplorer";
 import EnquiryForm from "@/components/EnquiryForm";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -24,7 +25,7 @@ export default async function ServicePage({ params }) {
       <section className="page-hero">
         <div className="container">
           <Link href="/#services" className="back">← All services</Link>
-          <span className="pill">{s.icon} {s.tag}</span>
+          <span className="pill"><Emoji e={s.icon} /> {s.tag}</span>
           <h1>{s.title}</h1>
           <p className="lead">{s.intro}</p>
         </div>
@@ -77,8 +78,8 @@ export default async function ServicePage({ params }) {
                 <p className="muted">Tell us your qualification and interest. We&apos;ll share the available programmes, eligibility, fees and admission dates.</p>
               </div>
               <div className="enquiry-actions">
-                <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="btn btn-ghost">📞 {site.phone}</a>
-                <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to enquire about online courses from universities.")}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary">💬 WhatsApp Enquiry</a>
+                <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="btn btn-ghost"><Emoji e="📞" /> {site.phone}</a>
+                <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to enquire about online courses from universities.")}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary"><Emoji e="💬" /> WhatsApp Enquiry</a>
               </div>
             </div>
           </div>

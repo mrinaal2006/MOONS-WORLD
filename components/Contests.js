@@ -2,13 +2,14 @@ import Link from "next/link";
 import Photo from "@/components/Photo";
 import { contestCategories, contests, contestsNote } from "@/data/site";
 import { statusLabel, groupsOf } from "@/data/contests";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 const catOf = (key) => contestCategories.find((c) => c.key === key) || contestCategories[0];
 
 export function ComingSoon({ text = contestsNote, compact = false }) {
   return (
     <div className={`coming-soon ${compact ? "compact" : ""}`}>
-      <span className="cs-icon">🚀</span>
+      <span className="cs-icon"><Emoji e="🚀" size="2.4rem" /></span>
       <div>
         <h3>Upcoming contests are coming soon</h3>
         <p className="muted">{text}</p>
@@ -29,7 +30,7 @@ export function CategoryCard({ c }) {
         )}
         <span className="explore">Explore Category <span className="arrow">→</span></span>
       </div>
-      <div className="cat-arc"><span>{c.icon}</span></div>
+      <div className="cat-arc"><span><Emoji e={c.icon} size="4.2rem" /></span></div>
     </Link>
   );
 }
@@ -45,21 +46,21 @@ export function ContestCard({ c }) {
           <img src={c.thumb || c.banner} alt={`${c.title} banner`} loading="lazy" />
         ) : (
           <div className={`auto-banner ${cat.key}`}>
-            <span>{cat.icon}</span>
+            <span><Emoji e={cat.icon} size="3rem" /></span>
             <strong>{c.title}</strong>
           </div>
         )}
         <span className={`status ${c.status}`}>{statusLabel[c.status] || c.status}</span>
       </div>
       <div className="contest-body">
-        <span className="tag">{cat.icon} {cat.title}</span>
+        <span className="tag"><Emoji e={cat.icon} /> {cat.title}</span>
         <h3>{c.title}</h3>
-        {c.notice && <p className="cd-notice">⚠️ {c.notice}</p>}
+        {c.notice && <p className="cd-notice"><Emoji e="⚠️" /> {c.notice}</p>}
         {c.description && <p className="muted">{c.description}</p>}
         <ul className="contest-meta">
-          {(c.date || c.startDate || c.dates?.[0]?.date) && <li>📅 {c.date || c.startDate || `${c.dates[0].label}: ${c.dates[0].date}`}</li>}
-          {groupsOf(c).length > 0 && <li>🏷️ {groupsOf(c).join(" & ")}</li>}
-          {c.eligibility && <li>🎯 {c.eligibility}</li>}
+          {(c.date || c.startDate || c.dates?.[0]?.date) && <li><Emoji e="📅" /> {c.date || c.startDate || `${c.dates[0].label}: ${c.dates[0].date}`}</li>}
+          {groupsOf(c).length > 0 && <li><Emoji e="🏷️" /> {groupsOf(c).join(" & ")}</li>}
+          {c.eligibility && <li><Emoji e="🎯" /> {c.eligibility}</li>}
         </ul>
         {open ? (
           <a href={c.formLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Register Now ↗</a>

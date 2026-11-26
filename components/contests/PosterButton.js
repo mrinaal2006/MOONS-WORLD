@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 // Poster preview button: real thumbnail of the poster + label; opens a full-screen viewer.
 export default function PosterButton({ src, title }) {
@@ -36,7 +37,7 @@ export default function PosterButton({ src, title }) {
           <div className="poster-viewer-inner">
             <Image src={src} alt={`${title} poster`} width={1200} height={1697} sizes="(max-width: 760px) 95vw, 640px" />
             <div className="poster-viewer-bar">
-              <a href={src} download className="btn btn-gold">⬇ Download</a>
+              <a href={src} download className="btn btn-gold"><Emoji e="⬇" /> Download</a>
               <button type="button" className="btn promo-ghost" onClick={() => setOpen(false)}>Close</button>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import ContestDetailCard from "./ContestDetailCard";
 import EmptyState from "./EmptyState";
 import { statusLabel, groupsOf } from "@/data/contests";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 const SEARCH_KEYS = ["title", "organizer", "eligibility", "problem", "examPattern", "rewards", "prizes", "difficulty", "syllabus", "topics", "subtitle", "description", "sponsoredBy", "collaborator", "venue"];
 const STATUS_FILTERS = ["all", "open", "upcoming", "closed"];
@@ -56,7 +57,7 @@ export default function CategoryExplorer({ category, items }) {
     <div className="cx">
       <div className="cx-toolbar">
         <label className="cx-search">
-          <span aria-hidden="true">🔍</span>
+          <span aria-hidden="true"><Emoji e="🔍" /></span>
           <input
             type="search"
             value={query}

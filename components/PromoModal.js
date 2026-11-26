@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { promo } from "@/data/promo";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 // Signals other widgets (the doubt chat) so they don't pop up on top of the ad.
 const setFlag = (v) => { if (v) document.documentElement.dataset.promo = v; else delete document.documentElement.dataset.promo; };
@@ -62,7 +63,7 @@ export default function PromoModal() {
           {promo.badge && <span className="promo-badge"><i /> {promo.badge}</span>}
           <h2 id="promo-title">{promo.title}</h2>
           {promo.subtitle && <p className="promo-sub">{promo.subtitle}</p>}
-          <ul>{promo.points.map((p) => <li key={p}>{p}</li>)}</ul>
+          <ul>{promo.points.map((p) => <li key={p}><EmojiText>{p}</EmojiText></li>)}</ul>
           <div className="promo-cta">
             <a href={promo.primary.href} className="btn btn-gold" target={promo.primary.external ? "_blank" : undefined}
               rel={promo.primary.external ? "noopener noreferrer" : undefined} onClick={close}>

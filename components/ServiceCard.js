@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 export default function ServiceCard({ s }) {
   return (
     <Link href={`/services/${s.slug}`} className="card service-card">
-      <div className="icon">{s.icon}</div>
+      <div className="icon"><Emoji e={s.icon} size="2.1rem" /></div>
       <span className="tag">{s.tag}</span>
       <h3>{s.title}</h3>
       <p className="muted">{s.short}</p>

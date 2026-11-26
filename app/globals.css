@@ -958,3 +958,18 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 .poster-viewer-bar { display: flex; gap: 10px; }
 .poster-viewer-x { position: fixed; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); background: #111; color: #fff; font-size: 1.05rem; cursor: pointer; }
 .poster-viewer-x:hover { transform: rotate(90deg); transition: transform .2s; }
+
+/* ═══ Realistic 3D emoji images (components/Emoji.js) ═══ */
+.emoji { display: inline-block; vertical-align: -0.22em; object-fit: contain; flex-shrink: 0; user-select: none; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .12)); }
+/* 3D icon polish */
+.facility-icon { background: #fff; box-shadow: 0 0 0 3px var(--gold), 0 4px 10px rgba(0, 0, 0, .12); }
+.icon { width: 64px; height: 64px; background: linear-gradient(145deg, #fff, #f1f1f1); box-shadow: 0 6px 14px rgba(0, 0, 0, .08), inset 0 1px 0 #fff; border: 1px solid #ececec; }
+.icon .emoji { width: 2.5rem !important; height: 2.5rem !important; transition: transform .4s cubic-bezier(.2, .8, .2, 1.4); }
+.vm-icon { background: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, .08); }
+.vm-photo-tag, .price-loc, .mentor-tag, .hero-chip, .flyer-zoom, .pill, .tag, .cd-notice, .course-note, .credential { display: inline-flex; align-items: center; gap: 6px; }
+.cd-notice, .course-note { display: flex; align-items: flex-start; }
+.cd-notice .emoji, .course-note .emoji { margin-top: .1em; }
+.contact-list li, .contest-meta li, .promo-info li { display: flex; align-items: flex-start; gap: 8px; }
+.contact-list li .emoji, .contest-meta li .emoji, .promo-info li .emoji { margin-top: .12em; }
+.cd-field dt { display: flex; align-items: center; gap: 6px; }
+.cs-icon, .empty-icon, .oc-icon { line-height: 1; }

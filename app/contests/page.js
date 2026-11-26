@@ -2,6 +2,7 @@ import { contestCategories, contests } from "@/data/site";
 import { ContestCard, CategoryCard } from "@/components/Contests";
 import EmptyState from "@/components/contests/EmptyState";
 import Breadcrumbs from "@/components/contests/Breadcrumbs";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 export const metadata = {
   title: "Contests",
@@ -15,7 +16,7 @@ export default function ContestsPage() {
       <section className="page-hero">
         <div className="container">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contests" }]} />
-          <span className="pill">🏆 Scholarship • Hackathon • Coding</span>
+          <span className="pill"><Emoji e="🏆" /> Scholarship • Hackathon • Coding</span>
           <h1>Contests &amp; <span className="hl">Scholarship Tests</span></h1>
           <p className="lead">
             Take part in school-level scholarship tests, hackathons and coding competitions organised by Moon&apos;s World.

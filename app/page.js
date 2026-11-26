@@ -5,6 +5,7 @@ import { services, stats, whyUs, site, onlineInstitutes, team, hostels, about, a
 import ServiceCard from "@/components/ServiceCard";
 import EnquiryForm from "@/components/EnquiryForm";
 import ContestsSection from "@/components/Contests";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 export default function Home() {
   const online = services.find((s) => s.slug === "online-courses");
@@ -36,7 +37,7 @@ export default function Home() {
               <span>Class XI admission</span>
               <strong>{admissionOffer.fee}<small>/month</small></strong>
             </Link>
-            <div className="hero-chip">⭐ {site.tagline}</div>
+            <div className="hero-chip"><Emoji e="⭐" /> {site.tagline}</div>
           </div>
         </div>
         <div className="container stats">
@@ -53,7 +54,7 @@ export default function Home() {
         <div className="container offer-grid">
           <a href={admissionOffer.flyer} target="_blank" rel="noopener noreferrer" className="flyer glass-frame" title="Open full flyer">
             <Photo src={admissionOffer.flyer} alt="Moon's World Class XI special admission flyer" width={900} height={1350} sizes="(max-width: 960px) 90vw, 420px" />
-            <span className="flyer-zoom">🔍 View full flyer</span>
+            <span className="flyer-zoom"><Emoji e="🔍" /> View full flyer</span>
           </a>
           <div>
             <span className="pill">{admissionOffer.kicker}</span>
@@ -67,13 +68,13 @@ export default function Home() {
                 <strong className="price">{admissionOffer.fee}</strong>
                 <span className="price-note">{admissionOffer.feeNote}</span>
               </div>
-              <div className="price-loc">📍 {admissionOffer.location}</div>
+              <div className="price-loc"><Emoji e="📍" /> {admissionOffer.location}</div>
             </div>
 
             <div className="facility-grid">
               {admissionOffer.facilities.map((f) => (
                 <div key={f.title} className="facility">
-                  <span className="facility-icon">{f.icon}</span>
+                  <span className="facility-icon"><Emoji e={f.icon} size="1.6rem" /></span>
                   <div>
                     <strong>{f.title}</strong>
                     <span lang="bn">{f.bn}</span>
@@ -88,7 +89,7 @@ export default function Home() {
             </div>
 
             <div className="hero-cta">
-              <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="btn btn-primary">📞 আজই ভর্তি হোন: {site.phone}</a>
+              <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="btn btn-primary"><Emoji e="📞" /> আজই ভর্তি হোন: {site.phone}</a>
               <Link href="/#contact" className="btn btn-ghost">Request a call back</Link>
             </div>
           </div>
@@ -118,17 +119,17 @@ export default function Home() {
             <div className="vm">
               <div className="vm-photo glass-frame">
                 <Photo src="/gallery/class-room.jpg" alt="Students attending class at Moon's World" width={610} height={1070} sizes="(max-width: 960px) 100vw, 480px" />
-                <span className="vm-photo-tag">📍 Our classroom, Bankura</span>
+                <span className="vm-photo-tag"><Emoji e="📍" /> Our classroom, Bankura</span>
               </div>
               <div className="vm-card vision">
-                <span className="vm-icon">🔭</span>
+                <span className="vm-icon"><Emoji e="🔭" size="1.9rem" /></span>
                 <div>
                   <h3>Our Vision</h3>
                   <p>{about.vision}</p>
                 </div>
               </div>
               <div className="vm-card mission">
-                <span className="vm-icon">🎯</span>
+                <span className="vm-icon"><Emoji e="🎯" size="1.9rem" /></span>
                 <div>
                   <h3>Our Mission</h3>
                   <p>{about.mission}</p>
@@ -144,7 +145,7 @@ export default function Home() {
           <div className="grid-4 focus-grid">
             {about.focus.map((f) => (
               <div key={f.title} className="card focus">
-                <div className="icon">{f.icon}</div>
+                <div className="icon"><Emoji e={f.icon} size="2.1rem" /></div>
                 <h3>{f.title}</h3>
                 <p className="muted">{f.text}</p>
               </div>
@@ -161,7 +162,7 @@ export default function Home() {
               <div className="mentor-photo">
                 <Photo src={m.photo} alt={`${m.name}, ${m.role}`} width={m.photoWidth} height={m.photoHeight} sizes="(max-width: 960px) 70vw, 360px" />
               </div>
-              <span className="mentor-tag">🩺 {m.role}</span>
+              <span className="mentor-tag"><Emoji e="🩺" /> {m.role}</span>
             </div>
             <div className="mentor-info">
               <span className="eyebrow">Meet our NEET Mentor</span>
@@ -181,7 +182,7 @@ export default function Home() {
               <div className="hero-cta">
                 <Link href="/#contact" className="btn btn-primary">Talk to our NEET mentor</Link>
                 <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hello Moon's World, I want to know about NEET coaching with Dr. Joyprakash Bit.")}`}
-                  target="_blank" rel="noopener noreferrer" className="btn btn-ghost">💬 WhatsApp enquiry</a>
+                  target="_blank" rel="noopener noreferrer" className="btn btn-ghost"><Emoji e="💬" /> WhatsApp enquiry</a>
               </div>
             </div>
           </div>
@@ -191,7 +192,7 @@ export default function Home() {
       <section id="online" className="section">
         <div className="container online">
           <div>
-            <span className="pill">🌐 New • Learn from anywhere</span>
+            <span className="pill"><Emoji e="🌐" /> New • Learn from anywhere</span>
             <h2>Admission to <span className="hl">online courses</span> from 6 government &amp; private universities</h2>
             <p className="muted">
               UG and PG degrees (BA, B.Com, BBA, BCA and MBA) you can study from home. We guide you from choosing a
@@ -205,7 +206,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="btn btn-ghost"
               >
-                💬 WhatsApp Enquiry
+                <Emoji e="💬" /> WhatsApp Enquiry
               </a>
             </div>
             <p className="inst-label">Online UG & PG admission at:</p>
@@ -237,7 +238,7 @@ export default function Home() {
           <div className="grid-4">
             {whyUs.map((w) => (
               <div key={w.title} className="card why">
-                <div className="icon">{w.icon}</div>
+                <div className="icon"><Emoji e={w.icon} size="2.1rem" /></div>
                 <h3>{w.title}</h3>
                 <p className="muted">{w.text}</p>
               </div>
@@ -261,12 +262,12 @@ export default function Home() {
                 <div className="team-body">
                   <span className="tag">{m.role}</span>
                   <h3>{m.name}</h3>
-                  {m.credential && <p className="credential">🎓 {m.credential}</p>}
+                  {m.credential && <p className="credential"><Emoji e="🎓" /> {m.credential}</p>}
                   <p className="muted">{m.bio}</p>
                   {m.quote && <blockquote lang="bn">“{m.quote}”</blockquote>}
                   {m.phone && (
                     <a href={`tel:${m.phone.replace(/\s/g, "")}`} className="explore">
-                      📞 {m.phone} <span className="arrow">→</span>
+                      <Emoji e="📞" /> {m.phone} <span className="arrow">→</span>
                     </a>
                   )}
                 </div>
@@ -304,15 +305,15 @@ export default function Home() {
             {hostels.map((h) => (
               <div key={h.name} className="card hostel">
                 <div className="hostel-top">
-                  <div className="icon">🏠</div>
+                  <div className="icon"><Emoji e="🏠" size="2.1rem" /></div>
                   <div>
                     <span className="tag">{h.tag}</span>
                     <h3>{h.name}</h3>
-                    <p className="muted small">📍 {h.location}</p>
+                    <p className="muted small"><Emoji e="📍" /> {h.location}</p>
                   </div>
                 </div>
                 <ul>{h.points.map((p) => <li key={p}>{p}</li>)}</ul>
-                <a href={`tel:${h.phone.split("/")[0].replace(/\s/g, "")}`} className="btn btn-ghost">📞 {h.phone}</a>
+                <a href={`tel:${h.phone.split("/")[0].replace(/\s/g, "")}`} className="btn btn-ghost"><Emoji e="📞" /> {h.phone}</a>
               </div>
             ))}
           </div>
@@ -339,9 +340,9 @@ export default function Home() {
               <Photo src="/team/centre.jpg" alt="Moon's World centre, Katjuridanga, Bankura" width={1200} height={742} sizes="(max-width: 960px) 100vw, 560px" />
             </div>
             <ul className="contact-list">
-              <li>📞 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>{site.phone2 && <> / <a href={`tel:${site.phone2.replace(/\s/g, "")}`}>{site.phone2}</a></>}{site.phone3 && <> / <a href={`tel:${site.phone3.replace(/\s/g, "")}`}>{site.phone3}</a></>}</li>
-              {site.email && <li>✉️ <a href={`mailto:${site.email}`}>{site.email}</a></li>}
-              <li>📍 <a href={site.mapLink} target="_blank" rel="noopener noreferrer">{site.address}</a></li>
+              <li><Emoji e="📞" /> <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>{site.phone2 && <> / <a href={`tel:${site.phone2.replace(/\s/g, "")}`}>{site.phone2}</a></>}{site.phone3 && <> / <a href={`tel:${site.phone3.replace(/\s/g, "")}`}>{site.phone3}</a></>}</li>
+              {site.email && <li><Emoji e="✉️" /> <a href={`mailto:${site.email}`}>{site.email}</a></li>}
+              <li><Emoji e="📍" /> <a href={site.mapLink} target="_blank" rel="noopener noreferrer">{site.address}</a></li>
             </ul>
           </div>
           <EnquiryForm />

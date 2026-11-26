@@ -4,6 +4,7 @@ import { contestCategories, contests, categoryBySlug } from "@/data/contests";
 import Breadcrumbs from "@/components/contests/Breadcrumbs";
 import CategoryExplorer from "@/components/contests/CategoryExplorer";
 import BackToCategories from "@/components/contests/BackToCategories";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 export const dynamicParams = false;
 
@@ -37,14 +38,14 @@ export default async function CategoryPage({ params }) {
 
           <div className="cat-hero-grid">
             <div>
-              <span className="pill">{cat.icon} Contest category</span>
+              <span className="pill"><Emoji e={cat.icon} /> Contest category</span>
               <h1>{cat.title}</h1>
               <p className="lead">{cat.intro}</p>
               <div className="chips">
                 {cat.groups.map((g) => <span key={g.value} className="chip">{g.label}</span>)}
               </div>
             </div>
-            <div className="cat-hero-art" aria-hidden="true"><span>{cat.icon}</span></div>
+            <div className="cat-hero-art" aria-hidden="true"><Emoji e={cat.icon} size="6rem" /></div>
           </div>
 
           <div className="cat-stats">
@@ -80,7 +81,7 @@ export default async function CategoryPage({ params }) {
           <div className="other-cats">
             {others.map((o) => (
               <Link key={o.key} href={`/contests/${o.slug}`} className="other-cat">
-                <span className="oc-icon">{o.icon}</span>
+                <span className="oc-icon"><Emoji e={o.icon} size="2rem" /></span>
                 <div>
                   <strong>{o.title}</strong>
                   <span className="muted">{o.text}</span>

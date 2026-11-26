@@ -2,6 +2,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { onlineInstitutes } from "@/data/onlinePrograms";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 const inr = (n) => "₹" + n.toLocaleString("en-IN");
 const LEVELS = ["All", "UG", "PG"];
@@ -80,7 +81,7 @@ export default function ProgramExplorer() {
               if (u.onRequest && !u.shown.length) {
                 return (
                   <>
-                    <p className="course-note">📘 Courses &amp; fees available on request</p>
+                    <p className="course-note"><Emoji e="📘" /> Courses &amp; fees available on request</p>
                     <a href="#enquire" className="explore">Enquire for details <span className="arrow">→</span></a>
                   </>
                 );
@@ -88,7 +89,7 @@ export default function ProgramExplorer() {
               return (
                 <>
                   <p className="course-note">
-                    📘 <strong>{u.shown.length} {u.shown.length === 1 ? "course" : "courses"}</strong> available
+                    <Emoji e="📘" /> <strong>{u.shown.length} {u.shown.length === 1 ? "course" : "courses"}</strong> available
                     <span className="muted"> ({[ug && `${ug} UG`, pg && `${pg} PG`].filter(Boolean).join(" · ")})</span>
                   </p>
                   <button type="button" className={`explore explore-btn ${isOpen ? "open" : ""}`} aria-expanded={isOpen} aria-controls={id} onClick={() => toggle(u.name)}>

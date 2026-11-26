@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { site } from "@/data/site";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 // Quick questions shown as chips; tapping one fills the message box.
 const QUICK = [
@@ -99,7 +100,7 @@ export default function DoubtWidget() {
             <div className="bubble typing" aria-label="typing"><span /><span /><span /></div>
           ) : (
             <div className="bubble">
-              👋 Hi! Ask us anything about <b>admission, fees, hostel, online courses</b> or <b>contests</b>. We&apos;ll reply on WhatsApp.
+              <Emoji e="👋" /> Hi! Ask us anything about <b>admission, fees, hostel, online courses</b> or <b>contests</b>. We&apos;ll reply on WhatsApp.
             </div>
           )}
           <div className="doubt-chips">

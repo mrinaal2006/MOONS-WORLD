@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { Emoji, EmojiText } from "@/components/Emoji";
 
 export default function EmptyState({ title = "No upcoming contests available. Stay tuned!", text, icon = "🗓️", cta = true, compact = false }) {
   return (
     <div className={`empty-state ${compact ? "compact" : ""}`} role="status">
-      <span className="empty-icon" aria-hidden="true">{icon}</span>
+      <span className="empty-icon" aria-hidden="true"><Emoji e={icon} size={compact ? "1.6rem" : "2.3rem"} /></span>
       <div>
         <h3>{title}</h3>
         {text && <p className="muted">{text}</p>}
