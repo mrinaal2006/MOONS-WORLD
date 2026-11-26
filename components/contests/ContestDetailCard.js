@@ -1,4 +1,5 @@
 import { statusLabel } from "@/data/contests";
+import PosterButton from "./PosterButton";
 
 function FieldValue({ f, value }) {
   if (f.type === "list") {
@@ -72,7 +73,7 @@ export default function ContestDetailCard({ contest: c, category, groupLabels = 
           </span>
         )}
         {c.poster && (
-          <a href={c.poster} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">🖼️ View poster</a>
+          <PosterButton src={c.poster} title={c.title} />
         )}
       </footer>
     </article>

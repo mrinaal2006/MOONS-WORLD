@@ -936,3 +936,25 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 .pill-loc svg { width: 17px; height: 17px; color: #c8102e; flex-shrink: 0; animation: pinDrop 2.6s ease-in-out infinite; transform-origin: 50% 100%; }
 .pill-loc:hover { background: var(--gold); color: #111; }
 @keyframes pinDrop { 0%, 70%, 100% { transform: translateY(0); } 80% { transform: translateY(-3px); } 90% { transform: translateY(0) scaleY(.92); } }
+
+/* Poster preview button + viewer */
+.poster-btn { display: inline-flex; align-items: center; gap: 14px; padding: 8px 18px 8px 8px; border-radius: 14px; background: #fff; border: 1px solid #e0e0e0; box-shadow: 0 6px 16px rgba(0, 0, 0, .08); color: #111; transition: transform .25s, box-shadow .25s, border-color .25s; min-width: 0; }
+.poster-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0, 0, 0, .14); border-color: var(--gold); }
+.poster-thumb { position: relative; width: 44px; height: 62px; flex-shrink: 0; border-radius: 6px; overflow: hidden; box-shadow: 0 3px 8px rgba(0, 0, 0, .35); transform: rotate(-4deg); transition: transform .3s; }
+.poster-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.poster-btn:hover .poster-thumb { transform: rotate(0) scale(1.06); }
+.poster-text { display: grid; line-height: 1.2; text-align: left; }
+.poster-text strong { font-size: 1rem; }
+.poster-text small { font-size: .78rem; color: var(--muted); }
+.poster-icon { width: 20px; height: 20px; margin-left: auto; color: #555; transition: color .2s, transform .2s; }
+.poster-btn:hover .poster-icon { color: #111; transform: scale(1.15); }
+.cd-foot.has-poster { align-items: center; }
+.cd-foot.has-poster .poster-btn { flex: 1 1 220px; }
+@media (min-width: 900px) { .contest-detail.featured .cd-foot.has-poster .poster-btn { flex: 0 0 auto; min-width: 260px; } }
+
+.poster-viewer { position: fixed; inset: 0; z-index: 210; display: grid; place-items: center; padding: 24px 16px; background: rgba(0, 0, 0, .82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: promoFade .25s ease both; overflow-y: auto; }
+.poster-viewer-inner { display: grid; gap: 14px; justify-items: center; animation: promoIn .4s cubic-bezier(.2, .8, .2, 1.2) both; }
+.poster-viewer-inner img { width: auto; height: auto; max-width: min(640px, 92vw); max-height: 82vh; border-radius: 14px; box-shadow: 0 30px 80px rgba(0, 0, 0, .6); }
+.poster-viewer-bar { display: flex; gap: 10px; }
+.poster-viewer-x { position: fixed; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); background: #111; color: #fff; font-size: 1.05rem; cursor: pointer; }
+.poster-viewer-x:hover { transform: rotate(90deg); transition: transform .2s; }
