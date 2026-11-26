@@ -930,3 +930,9 @@ body { background: linear-gradient(180deg, #f3f3f3 0%, #f7f4ec 100%); background
 
 /* Postponement / important notice on contest cards */
 .cd-notice { margin: 8px 0 4px; padding: 10px 14px; border-radius: 12px; background: #fde8eb; border: 1px solid #f5b5c0; color: #8a0f24; font-weight: 600; font-size: .92rem; line-height: 1.5; }
+
+/* Location pill in the main banner */
+.pill-loc { display: inline-flex; align-items: center; gap: 6px; }
+.pill-loc svg { width: 17px; height: 17px; color: #c8102e; flex-shrink: 0; animation: pinDrop 2.6s ease-in-out infinite; transform-origin: 50% 100%; }
+.pill-loc:hover { background: var(--gold); color: #111; }
+@keyframes pinDrop { 0%, 70%, 100% { transform: translateY(0); } 80% { transform: translateY(-3px); } 90% { transform: translateY(0) scaleY(.92); } }
