@@ -75,7 +75,7 @@ export const hostels = [
 ];
 
 // Thin strip shown above the menu bar on every page.
-export const announcement = "বিশেষ ভর্তি সুযোগ • Class XI • ₹6000/month";
+export const announcement = "বিশেষ ভর্তি সুযোগ • Class XI • ₹8000/month";
 
 export const nav = [
   { label: "Home", href: "/" },
@@ -234,10 +234,10 @@ export const admissionOffer = {
   title: "বিশেষ ভর্তি সুযোগ!",
   subtitle: "Special admission for Class XI (একাদশ শ্রেণী) students",
   slogan: "শিখুন • গড়ুন • সফল হোন",
-  fee: "₹6000",
+  fee: "₹8000",
   feeNote: "per month (প্রতি মাস)",
   location: "Bankura (বাঁকুড়া)",
-  flyer: "/gallery/admission-flyer.jpg",
+  flyer: "/gallery/admission-flyer-8000.jpg",
   facilities: [
     { icon: "🛏️", title: "Hostel accommodation", bn: "আবাসনের ব্যবস্থা", text: "Clean and safe hostel facility." },
     { icon: "🍽️", title: "4 nutritious meals a day", bn: "দিনে ৪ বেলা পুষ্টিকর খাবার", text: "Balanced, healthy food every day." },
